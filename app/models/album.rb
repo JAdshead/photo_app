@@ -1,0 +1,4 @@
+class Album
+
+
+end
