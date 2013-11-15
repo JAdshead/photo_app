@@ -1,4 +1,4 @@
-class Photo
+class Photo < ActiveRecord::Base
 
 
 end
