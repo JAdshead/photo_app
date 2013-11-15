@@ -15,6 +15,7 @@ gem 'haml-rails'
 
 
 
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -43,3 +44,19 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+group :development, :test do
+  gem 'pry-rails'
+  # gem 'pry-byebug'
+  # gem 'pry-stack_explorer'
+  gem 'annotate'
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  gem "rspec-rails"
+  gem "database_cleaner"
+  gem "capybara"
+  gem "factory_girl_rails"
+  gem "faker"
+end
