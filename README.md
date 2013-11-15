@@ -7,3 +7,6 @@ Team Members
 Daida Medina
 
 Selina Chotai
+
+Jack Lalley
+
