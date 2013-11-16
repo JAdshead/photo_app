@@ -40,7 +40,8 @@ test:
   adapter: postgresql
   encoding: unicode
   database: photo_app_test
-
+  pool: 5
+  host: localhost
 
 
 production:
