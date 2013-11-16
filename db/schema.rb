@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20131115163033) do
   end
 
   create_table "photos", :force => true do |t|
+    t.string   "title"
     t.string   "description"
     t.string   "image"
     t.string   "tag_cloud"
