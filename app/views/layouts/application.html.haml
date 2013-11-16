@@ -9,6 +9,10 @@
     %nav
       %h2= link_to "Photo App", root_path
 
-    = link_to "See Albums", albums_path
+      = link_to "See Albums", albums_path
+      \|
+      = link_to 'Create new user', new_user_path
+      \|
+      = link_to 'All Users', users_path
     %hr
     = yield
