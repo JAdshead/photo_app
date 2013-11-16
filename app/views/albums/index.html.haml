@@ -1,0 +1,13 @@
+%h3 Albums Page
+
+= link_to "Create new album", new_album_path
+
+- @albums.each do |album|
+  %ul
+    %li
+      %h4= album.title
+    %li
+      = album.description
+    = link_to "View Album", album_path(album)
+    \|
+    = link_to "Edit Album", edit_album_path(album)
