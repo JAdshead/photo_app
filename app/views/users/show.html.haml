@@ -1,0 +1,20 @@
+%h3 User profile
+= @user.name
+%br/
+= @user.email
+%br/
+= @user.image
+%br/
+%h3 Albums
+- for album in @user.albums
+  = link_to album.title, album
+%hr
+= link_to 'Edit Profile', edit_user_path(@user)
+\|
+= link_to 'Delete profile', @user, :method => :delete, :confirm => 'Are you sure? Many people love your photos!'
+\|
+= link_to 'Create Album', new_album_path(:user_id => @user)
+
+
+
+

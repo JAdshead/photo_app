@@ -8,6 +8,8 @@
       %h4= album.title
     %li
       = album.description
+    %li
+      = album.user_id
     = link_to "View Album", album_path(album)
     \|
     = link_to "Edit Album", edit_album_path(album)

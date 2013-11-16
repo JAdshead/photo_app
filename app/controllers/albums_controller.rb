@@ -9,7 +9,7 @@ class AlbumsController < ApplicationController
   end
 
   def new
-    @album = Album.new
+    @album = Album.new(:user_id => params[:user_id])
   end
 
   def create
@@ -30,8 +30,9 @@ class AlbumsController < ApplicationController
 
   def destroy
     album = Album.find params[:id]
+    user = User.find(album.user_id)
     album.delete
-    redirect_to albums_path
+    redirect_to user
   end
-  
+
 end

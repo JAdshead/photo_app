@@ -42,6 +42,7 @@ test:
   database: photo_app_test
 
 
+
 production:
   adapter: postgresql
   encoding: unicode
