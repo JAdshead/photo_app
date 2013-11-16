@@ -1,0 +1,12 @@
+= link_to 'All Users', users_path
+%br/
+%h1= @user.name
+= @user.email
+%br/
+= @user.image
+%br/
+= link_to 'Edit Profile', edit_user_path(@user)
+%br/
+= link_to 'Delete profile', @user, :method => :delete, :confirm => 'Are you sure? Many people love your photos!'
+
+
