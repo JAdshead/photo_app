@@ -1,0 +1,7 @@
+%h3 Comments Page
+
+- @comments.each do |comment|
+  %ul
+    %li
+      = link_to comment.description, comment
+
