@@ -1,5 +1,6 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :title, :description
+  attr_accessible :title, :description, :image
+  mount_uploader :image, ImageUploader
 
   belongs_to :user
   belongs_to :album
