@@ -12,6 +12,7 @@ gem 'pg'
 # Added Gems
 gem 'haml-rails'
 gem 'devise'
+gem 'omniauth-google-oauth2'
 
 
 
