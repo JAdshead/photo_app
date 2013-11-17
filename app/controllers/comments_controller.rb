@@ -13,8 +13,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.create params[:comment]
-    redirect_to @comment
+    @comment = Comment.new params[:comment]
+    @comment.photo_id = params[:photo_id]
+    @comment.save
+    redirect_to @comment.photo
   end
 
   def edit
