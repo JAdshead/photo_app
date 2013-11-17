@@ -11,6 +11,8 @@ gem 'pg'
 
 # Added Gems
 gem 'haml-rails'
+gem 'carrierwave'
+gem "fog", "~> 1.3.1"
 
 
 
