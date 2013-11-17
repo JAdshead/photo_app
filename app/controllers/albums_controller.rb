@@ -1,5 +1,7 @@
 class AlbumsController < ApplicationController
 
+before_filter :authenticate_user!, except: [:show, :index]
+
   def index
     @albums = Album.all
   end

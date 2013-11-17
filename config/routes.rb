@@ -1,4 +1,10 @@
 PhotoApp::Application.routes.draw do
+  devise_for :users, :controllers => {:registrations => 'users'}
+
+  devise_scope :user do
+    #get 'users' => 'users#index'
+    resources :users, only: [:index]
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
   root :to => 'welcome#index'

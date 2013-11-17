@@ -11,10 +11,26 @@
 
       = link_to "See Albums", albums_path
       \|
+      // don't need this link as devise creates a sign up new user link which renders this view.
       = link_to 'Create new user', new_user_path
       \|
       = link_to 'All Users', users_path
       \|
       = link_to 'All Comments', comments_path
     %hr
-    = yield
+    .user-nav
+      - if user_signed_in?
+        Logged in as
+        %b= current_user.email
+        = link_to 'Edit Profile', edit_user_registration_path
+        \|
+        = link_to 'Logout',  destroy_user_session_path, method: :delete
+      - else
+        = link_to 'Sign up', new_user_registration_path
+        \|
+        = link_to 'Login', new_user_session_path
+
+      - flash.each do |name, msg|
+        = content_tag :div, msg, :id => "flash_#{name}"
+      = yield
+
