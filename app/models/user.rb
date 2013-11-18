@@ -16,8 +16,7 @@ class User < ActiveRecord::Base
           }
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :name, :email, :image, :password, :role
+  attr_accessible :name, :image, :role, :email, :password, :password_confirmation, :remember_me
 
   has_many :albums
   has_many :comments
@@ -27,12 +26,14 @@ class User < ActiveRecord::Base
     if user = User.find_by_email(auth.info.email)
       user.provider = auth.provider
       user.uid = auth.uid
+      user.name = auth.info.name
       user
     else
       User.where(auth.slice(:provider, :uid)).first_or_create do |user|
         user.provider = auth.provider
         user.uid = auth.uid
         user.email = auth.info.email
+        user.name = auth.info.name
         user.password = Devise.friendly_token[0, 20]
         user.skip_confirmation!
         user
