@@ -34,6 +34,9 @@
   = link_to "Remove photo", photo_path(photo), method: :delete
   %hr
 
+%h3 Album owner
+/ = @album.user.email
+
 = link_to "View all Albums", albums_path
 \|
 = link_to "Edit Album", edit_album_path(@album)

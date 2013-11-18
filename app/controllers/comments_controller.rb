@@ -17,6 +17,7 @@ before_filter :authenticate_user!, except: [:show, :index]
   def create
     @comment = Comment.new params[:comment]
     @comment.photo_id = params[:photo_id]
+    @comment.user_id = current_user
     @comment.save
     redirect_to @comment.photo
   end
