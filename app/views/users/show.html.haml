@@ -9,15 +9,11 @@
 %ul
   - for album in @user.albums
     %li
-      = link_to image_tag(album.photos.first.image, :width => "100px"), album
+      = link_to image_tag(album.photos.sort_by{ |post| post.votes_for.size }.reverse.first.image, :width => "100px"), album
 
 = link_to 'Create Album', new_album_path(:user_id => @user)
 %hr
 /must be into edit profile but is currently not working
 / = link_to 'Delete profile', @user, :method => :delete, :confirm => 'Are you sure? Many people love your photos!'
-
-
-
-
 
 
