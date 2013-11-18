@@ -281,6 +281,6 @@ DEPENDENCIES
   rails (= 3.2.14)
   rspec-rails
   sass-rails (~> 3.2.3)
-  thin
   select2-rails
+  thin
   uglifier (>= 1.0.3)
