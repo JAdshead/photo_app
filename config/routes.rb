@@ -10,7 +10,14 @@ PhotoApp::Application.routes.draw do
   root :to => 'welcome#index'
 
   resources :albums
-  resources :photos
+
+  resources :photos do
+    member do
+    post :vote_up
+    post :vote_down
+    end
+  end
+
   resources :comments
 
   # Sample of regular route:
