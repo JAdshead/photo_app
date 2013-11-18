@@ -33,7 +33,7 @@
 - @album.photos.each do |photo|
   %ul
     %li
-      %img{:src => "#{photo.image}"}
+      = image_tag photo.image, :width => "400px"
     %li
       = photo.title
     %li

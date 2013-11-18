@@ -17,7 +17,7 @@ before_filter :authenticate_user!, except: [:show, :index]
   end
 
   def create
-    @album = Album.new 
+    @album = Album.new params[:album]
     @album.user_id = current_user.id
     @album.save
     redirect_to @album
