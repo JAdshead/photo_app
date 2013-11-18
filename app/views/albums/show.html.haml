@@ -23,8 +23,10 @@
   = f.label :description
   = f.text_field :description
   = f.file_field :image
+  .input-row
+    = f.label :tags
+    = f.text_field :tag_list, id: "photo_tags_list"
   = f.submit
-
 %br
 
 %h3 photos in album

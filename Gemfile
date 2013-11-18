@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.14'
 
+gem 'thin'
+
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -15,6 +18,8 @@ gem 'devise'
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
 gem 'omniauth-google-oauth2'
+gem 'acts-as-taggable-on'
+gem "select2-rails"
 
 
 
