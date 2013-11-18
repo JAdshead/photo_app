@@ -1,9 +1,25 @@
 PhotoApp::Application.routes.draw do
+  devise_for :users, :controllers => {:registrations => 'users', omniauth_callbacks: 'omniauth_callbacks'}
+
+  devise_scope :user do
+    #get 'users' => 'users#index'
+    resources :users, only: [:index, :edit ,:update, :show]
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  root :to => 'welcome#index'
+
   resources :albums
 
-  root :to => 'welcome#index'
+  resources :photos do
+    member do
+    post :vote_up
+    post :vote_down
+    end
+  end
+
+  resources :comments
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
