@@ -7,6 +7,13 @@
 %p
   Album Description :
   = @album.description
+  %br
+  %br
+  /Must show just current user albums
+  = link_to "View all Albums", albums_path
+  \|
+  = link_to "Edit Album", edit_album_path(@album)
+
 
 %h3 Form to Add photo
 = form_for(@photo) do |f|
@@ -22,7 +29,7 @@
 
 %h3 photos in album
 - @album.photos.each do |photo|
-  %ul 
+  %ul
     %li
       %img{:src => "#{photo.image}"}
     %li
@@ -34,6 +41,11 @@
   = link_to "Remove photo", photo_path(photo), method: :delete
   %hr
 
+%h3 Album owner
+= @album.user.name
+
+%br
+
 = link_to "View all Albums", albums_path
 \|
 = link_to "Edit Album", edit_album_path(@album)
@@ -41,3 +53,6 @@
 = link_to "Delete Album", album_path(@album), method: :delete
 \|
 / = link_to "Back to user profile", user_path(@album.user_id)
+
+
+
