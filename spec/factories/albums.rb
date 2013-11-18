@@ -1,5 +1,3 @@
-require 'faker'
-
 FactoryGirl.define do
   factory :album do
     title { Faker::Name.first_name }
