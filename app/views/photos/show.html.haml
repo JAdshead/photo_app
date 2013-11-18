@@ -4,13 +4,13 @@
 
 = @photo.description
 
+= image_tag @photo.image, :width => "400px"
+
 
 %h3 Form to Add a Comment
 
 = form_for(@comment) do |f|
   = hidden_field_tag :photo_id, @photo.id
-  / = f.hidden_field :photo_id
-  / = f.hidden_field :user_id
   = f.label :description
   = f.text_field :description
   %br/
