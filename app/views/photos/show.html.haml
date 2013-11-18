@@ -37,8 +37,12 @@
       = comment.description
     %li
       = comment.user.email
+      - if current_user.role?(:admin) || comment.user == current_user
+        = link_to 'Delete Comment', comment, method: :delete
 
-= link_to "edit photo", edit_photo_path(@photo)
+
+- if current_user.role?(:admin) || @photo.album.user == current_user
+  = link_to "edit photo", edit_photo_path(@photo)
 
 
 

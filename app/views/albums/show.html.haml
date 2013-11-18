@@ -9,24 +9,24 @@
   = @album.description
   %br
   %br
-  /Must show just current user albums
   = link_to "View all Albums", albums_path
   \|
-  = link_to "Edit Album", edit_album_path(@album)
+  - if current_user.role?(:admin) || @album.user == current_user
+    = link_to "Edit Album", edit_album_path(@album)
 
 
-%h3 Form to Add photo
-= form_for(@photo) do |f|
-  = hidden_field_tag :album_id, @album.id
-  = f.label :title
-  = f.text_field :title
-  = f.label :description
-  = f.text_field :description
-  = f.file_field :image
-  .input-row
-    = f.label :tags
-    = f.text_field :tag_list, id: "photo_tags_list"
-  = f.submit
+    %h3 Form to Add photo
+    = form_for(@photo) do |f|
+      = hidden_field_tag :album_id, @album.id
+      = f.label :title
+      = f.text_field :title
+      = f.label :description
+      = f.text_field :description
+      = f.file_field :image
+      .input-row
+        = f.label :tags
+        = f.text_field :tag_list, id: "photo_tags_list"
+      = f.submit
 %br
 
 %h3 photos in album
@@ -40,7 +40,8 @@
       = photo.description
   = link_to "show photo", photo_path(photo)
   \|
-  = link_to "Remove photo", photo_path(photo), method: :delete
+  - if current_user.role?(:admin) || @album.user == current_user
+    = link_to "Remove photo", photo_path(photo), method: :delete
   %hr
 
 %h3 Album owner
@@ -50,10 +51,11 @@
 
 = link_to "View all Albums", albums_path
 \|
-= link_to "Edit Album", edit_album_path(@album)
-\|
-= link_to "Delete Album", album_path(@album), method: :delete
-\|
+- if current_user.role?(:admin) || @album.user == current_user
+  = link_to "Edit Album", edit_album_path(@album)
+  \|
+  = link_to "Delete Album", album_path(@album), method: :delete
+  \|
 / = link_to "Back to user profile", user_path(@album.user_id)
 
 
