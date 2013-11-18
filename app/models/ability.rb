@@ -33,6 +33,7 @@ class Ability
       can :destroy, Comment do |comment|
           comment.user == user
       end
+
     else
       can :read, :all
       can :create, User

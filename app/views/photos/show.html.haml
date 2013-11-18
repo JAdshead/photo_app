@@ -22,8 +22,8 @@
       = comment.description
     %li
       = comment.user.email
-      = link_to 'Delete Comment', comment, method: :delete
-      // waiting for the delete capacity
+      - if current_user.role?(:admin) || comment.user == current_user
+        = link_to 'Delete Comment', comment, method: :delete
 
 
 - if current_user.role?(:admin) || @photo.album.user == current_user
