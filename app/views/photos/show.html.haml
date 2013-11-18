@@ -22,6 +22,8 @@
   - @photo.comments.each do |comment|
     %li
       = comment.description
+    %li
+      = comment.user.email
 
 = link_to "edit photo", edit_photo_path(@photo)
 
