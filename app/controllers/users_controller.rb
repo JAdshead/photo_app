@@ -18,9 +18,6 @@ class UsersController < Devise::RegistrationsController
     @user.save!
   end
 
-  def edit
-    logger.info self.class.ancestors
-    super
-  end
+  
 
 end
