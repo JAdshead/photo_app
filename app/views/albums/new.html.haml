@@ -1,10 +1,14 @@
 %h3 New Album
 
 = form_for(@album) do |f|
+
+  = f.hidden_field :user_id
+
   = f.label :title
   = f.text_field :title
   %br/
   = f.label :description
   = f.text_field :description
-  %br/
-  = f.submit
+  %br
+  .actions
+    = f.submit 'Create Album'
