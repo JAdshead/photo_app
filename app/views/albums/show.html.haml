@@ -22,6 +22,7 @@
   = f.text_field :title
   = f.label :description
   = f.text_field :description
+  = f.file_field :image
   = f.submit
 
 %br
@@ -29,6 +30,8 @@
 %h3 photos in album
 - @album.photos.each do |photo|
   %ul
+    %li
+      %img{:src => "#{photo.image}"}
     %li
       = photo.title
     %li
