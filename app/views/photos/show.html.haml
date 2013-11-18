@@ -9,8 +9,6 @@
 
 = form_for(@comment) do |f|
   = hidden_field_tag :photo_id, @photo.id
-  / = f.hidden_field :photo_id
-  / = f.hidden_field :user_id
   = f.label :description
   = f.text_field :description
   %br/
@@ -24,8 +22,12 @@
       = comment.description
     %li
       = comment.user.email
+      = link_to 'Delete Comment'
+      // waiting for the delete capacity
 
-= link_to "edit photo", edit_photo_path(@photo)
+
+- if current_user.role?(:admin) || @photo.album.user == current_user
+  = link_to "edit photo", edit_photo_path(@photo)
 
 
 
