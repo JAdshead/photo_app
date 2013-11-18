@@ -13,11 +13,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    # need this to be an instance variable for devise - have not changed
-    user = User.create params[:user]
-    user.role = "user"
-    user.save!
-    redirect_to user
+    @user = User.create params[:user]
+    @user.role = "user"
+    @user.save!
+    redirect_to @user
   end
 
   def edit

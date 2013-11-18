@@ -14,7 +14,7 @@ gem 'haml-rails'
 gem 'devise'
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
-
+gem 'omniauth-google-oauth2'
 
 
 
