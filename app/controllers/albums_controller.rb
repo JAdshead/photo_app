@@ -12,12 +12,14 @@ before_filter :authenticate_user!, except: [:show, :index]
   end
 
   def new
-    @album = Album.new(:user_id => params[:user_id])
+    @album = Album.new(:user_id => current_user)
   end
 
   def create
-    album = Album.create params[:album]
-    redirect_to album
+    @album = Album.new params[:album]
+    @album.user_id = current_user.id
+    @album.save
+    redirect_to @album
   end
 
   def edit

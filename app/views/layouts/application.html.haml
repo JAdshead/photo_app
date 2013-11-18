@@ -9,16 +9,17 @@
     %nav
       %h2= link_to "Photo App", root_path
 
-      = link_to "All Albums", albums_path
-      \|
-      = link_to 'All Users', users_path
-      \|
-      = link_to 'All Comments', comments_path
-    %hr
+    /  = link_to "All Albums", albums_path
+    /  \|
+    / = link_to 'All Users', users_path
+    /  \|
+    /  = link_to 'All Comments', comments_path
     .user-nav
       - if user_signed_in?
         Logged in as
         %b= current_user.email
+        = link_to 'Profile', current_user
+        \|
         = link_to 'Edit Profile', edit_user_registration_path
         \|
         = link_to 'Logout',  destroy_user_session_path, method: :delete
@@ -31,5 +32,6 @@
 
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
+      %hr
       = yield
 

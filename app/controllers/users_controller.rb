@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < Devise::RegistrationsController
 
   def index
     @users = User.all
@@ -8,33 +8,17 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
   end
 
-  def new
-    @user = User.new
-  end
-
   def create
-    @user = User.create params[:user]
-    @user.role = "user"
+    # run the default version in Devise::RegistrationsController
+    super
+    # then run our custom logic
+    @user.role = 'user' 
     @user.save!
-    redirect_to @user
   end
 
   def edit
-    @user = User.find params[:id]
     logger.info self.class.ancestors
     super
-  end
-
-  def update
-    user = User.find params[:id]
-    user.update_attributes params[:user]
-    redirect_to user
-  end
-
-  def destroy
-    user = User.find params[:id]
-    user.delete
-    redirect_to users_path
   end
 
 end
