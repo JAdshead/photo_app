@@ -4,5 +4,6 @@ class WelcomeController < ApplicationController
 
   end
 
+# Just testing
 
 end
