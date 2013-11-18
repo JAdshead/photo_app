@@ -42,7 +42,9 @@
   %hr
 
 %h3 Album owner
-/ = @album.user.email
+= @album.user.name
+
+%br
 
 = link_to "View all Albums", albums_path
 \|
@@ -53,4 +55,4 @@
 / = link_to "Back to user profile", user_path(@album.user_id)
 
 
->>>>>>> c7c2ec8c5ac6495be8513358c62b41520bdc5ce2
+
