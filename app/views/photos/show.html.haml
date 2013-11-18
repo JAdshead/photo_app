@@ -1,12 +1,12 @@
 %h3= @photo.title
+- if !!@photo.votes
+  %h4
+    Number of Up Votes =
+    = @photo.votes_for
 
-%h4
-  Number of Up Votes =
-  = @photo.votes_for
-
-%h4
-  Number of Down Votes =
-  = @photo.votes_against
+  %h4
+    Number of Down Votes =
+    = @photo.votes_against
 
 %p this is the photo
 
