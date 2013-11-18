@@ -6,6 +6,7 @@ class Ability
 
     if user.role? :admin
       can :manage, :all
+
     elsif user.role? :user
       can :read, :all
 
@@ -22,6 +23,10 @@ class Ability
       can :manage, Photo do |photo|
           photo.user == user
       end
+
+      can :vote_up, Photo
+      can :vote_down, Photo
+
       can :update, Photo do |photo|
           photo.album.user == user
       end
