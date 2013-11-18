@@ -8,7 +8,7 @@ FactoryGirl.define do
 
     trait :with_comments do
       ignore do
-        photo_count 4 # tells FG this is NOT an attribute
+        comment_count 4 # tells FG this is NOT an attribute
       end
 
       after(:create) do |album, evaluator|
