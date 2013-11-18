@@ -1,5 +1,13 @@
 %h3= @photo.title
 
+%h4
+  Number of Up Votes =
+  = @photo.votes_for
+
+%h4
+  Number of Down Votes =
+  = @photo.votes_against
+
 %p this is the photo
 
 = @photo.description
@@ -10,7 +18,7 @@
 %br
 = link_to 'UP VOTE for this post!', vote_up_photo_path(@photo), :method => :post
 \|
-= link_to 'DOWN VOTE for this post!', vote_up_photo_path(@photo), :method => :post
+= link_to 'DOWN VOTE for this post!', vote_down_photo_path(@photo), :method => :post
 
 %h3 Form to Add a Comment
 

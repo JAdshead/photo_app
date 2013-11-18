@@ -39,15 +39,15 @@ before_filter :authenticate_user!, except: [:show, :index]
   end
 
   def vote_up
-    photo = Photo.find params[:id]
-    current_user.vote_for(photo)
-    redirect_to photo.album
+    @photo = Photo.find params[:id]
+    current_user.vote_for(@photo)
+    redirect_to @photo
   end
 
   def vote_down
-    photo = Photo.find params[:id]
-    current_user.vote_against(photo)
-    redirect_to photo.album
+    @photo = Photo.find params[:id]
+    current_user.vote_against(@photo)
+    redirect_to @photo
   end
 
 end
