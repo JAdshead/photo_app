@@ -1,5 +1,7 @@
 class UsersController < Devise::RegistrationsController
 
+  load_and_authorize_resource
+
   def index
     @users = User.all
   end
@@ -12,7 +14,7 @@ class UsersController < Devise::RegistrationsController
     # run the default version in Devise::RegistrationsController
     super
     # then run our custom logic
-    @user.role = 'user' 
+    @user.role = 'user'
     @user.save!
   end
 

@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
 
+load_and_authorize_resource
 before_filter :authenticate_user!, except: [:show, :index]
 
   def index
@@ -36,6 +37,18 @@ before_filter :authenticate_user!, except: [:show, :index]
     photo = Photo.find params[:id]
     photo.delete
     redirect_to photo.album
+  end
+
+  def vote_up
+    @photo = Photo.find params[:id]
+    current_user.vote_for(@photo)
+    redirect_to @photo
+  end
+
+  def vote_down
+    @photo = Photo.find params[:id]
+    current_user.vote_against(@photo)
+    redirect_to @photo
   end
 
 end

@@ -22,6 +22,9 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :photos, through: :album
 
+  acts_as_voter
+  has_karma :photos, :as => :submitter, :weight => [ 0.5, -0.5 ]
+
   def self.from_omniauth(auth)
     if user = User.find_by_email(auth.info.email)
       user.provider = auth.provider
@@ -39,5 +42,9 @@ class User < ActiveRecord::Base
         user
       end
     end
+  end
+
+  def role?(r)
+    self.role == r.to_s
   end
 end

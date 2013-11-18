@@ -1,4 +1,12 @@
 %h3= @photo.title
+- if !!@photo.votes
+  %h4
+    Number of Up Votes =
+    = @photo.votes_for
+
+  %h4
+    Number of Down Votes =
+    = @photo.votes_against
 
 %p this is the photo
 
@@ -6,6 +14,11 @@
 
 = image_tag @photo.image, :width => "400px"
 
+
+%br
+= link_to 'UP VOTE for this post!', vote_up_photo_path(@photo), :method => :post
+\|
+= link_to 'DOWN VOTE for this post!', vote_down_photo_path(@photo), :method => :post
 
 %h3 Form to Add a Comment
 
@@ -24,8 +37,12 @@
       = comment.description
     %li
       = comment.user.email
+      - if current_user.role?(:admin) || comment.user == current_user
+        = link_to 'Delete Comment', comment, method: :delete
 
-= link_to "edit photo", edit_photo_path(@photo)
+
+- if current_user.role?(:admin) || @photo.album.user == current_user
+  = link_to "edit photo", edit_photo_path(@photo)
 
 
 
