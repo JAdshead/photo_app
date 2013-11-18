@@ -11,7 +11,6 @@ gem 'thin'
 gem 'pg'
 
 
-
 # Added Gems
 gem 'haml-rails'
 gem 'devise'
@@ -21,7 +20,7 @@ gem 'omniauth-google-oauth2'
 gem 'cancan'
 gem 'acts-as-taggable-on'
 gem "select2-rails"
-
+gem 'thumbs_up'
 
 
 # Gems used only for assets and not required
