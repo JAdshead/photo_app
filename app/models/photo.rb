@@ -1,3 +1,5 @@
+require 'textacular/searchable'
+
 class Photo < ActiveRecord::Base
   attr_accessible :title, :description, :image, :tag_list
   mount_uploader :image, ImageUploader

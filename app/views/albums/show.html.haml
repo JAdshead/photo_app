@@ -38,6 +38,8 @@
       = photo.title
     %li
       = photo.description
+    %li
+      = photo.tag_list
   = link_to "show photo", photo_path(photo)
   \|
   = link_to "Remove photo", photo_path(photo), method: :delete
