@@ -7,9 +7,3 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-admin = User.new(name: 'Alice', role: 'admin', email: 'daida.ms+alice@gmail.com', password: 'alice12345', password_confirmation: 'alice12345')
-bob = User.new(name: 'Bob', role: 'user', email: 'dmesu@hotmail.com', password: 'bob12345', password_confirmation: 'bob12345')
-
-
-admin.save!
-bob.save!
