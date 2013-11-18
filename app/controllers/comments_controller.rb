@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 
+load_and_authorize_resource
 before_filter :authenticate_user!, except: [:show, :index]
 
   def index
@@ -35,7 +36,7 @@ before_filter :authenticate_user!, except: [:show, :index]
   def destroy
     comment = Comment.find params[:id]
     comment.delete
-    redirect_to comments_path
+    redirect_to comment.photo
   end
 
 

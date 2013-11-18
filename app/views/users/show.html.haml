@@ -12,7 +12,8 @@
     %li
       = link_to image_tag(photo.image, :width => "100px"), album
 
-= link_to 'Create Album', new_album_path(:user_id => @user)
+- if can? :create, Album
+  = link_to 'Create Album', new_album_path(:user_id => @user)
 %hr
 /must be into edit profile but is currently not working
 / = link_to 'Delete profile', @user, :method => :delete, :confirm => 'Are you sure? Many people love your photos!'
