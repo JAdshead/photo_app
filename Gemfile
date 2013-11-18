@@ -18,6 +18,8 @@ gem 'devise'
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
 gem 'omniauth-google-oauth2'
+gem 'acts-as-taggable-on'
+gem "select2-rails"
 
 
 
@@ -64,4 +66,9 @@ group :development, :test do
   gem "capybara"
   gem "factory_girl_rails"
   gem "faker"
+end
+
+group :test do
+  gem 'guard-rspec'
+  gem 'launchy'
 end

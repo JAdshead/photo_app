@@ -10,17 +10,15 @@ FactoryGirl.define do
       ignore do
         album_count 3 # tells FG this is NOT an attribute
       end
+
+      after(:create) do |user, evaluator|
+        FactoryGirl.create_list :album, evaluator.album_count, user: user
+      end
     end
 
-    after(:create) do |user, evaluator|
-      FactoryGirl.create_list :album, evaluator.album_count, user: user
+    factory :admin do
+      role "admin"
+      factory :admin_with_albums, traits: [:with_albums]
     end
-
   end
-
-  factory :admin do
-  role "admin"
-  factory :admin_with_albums, traits: [:with_albums]
-  end
-
 end
