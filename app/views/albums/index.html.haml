@@ -10,6 +10,8 @@
       = album.description
     %li
       = album.user_id
+      / = image_tag album.photos.first.image, :width => "100px"
+      = image_tag album.photos.sort_by{ |post| post.votes_for.size }.reverse.first.image, :width => "100px"
     = link_to "View Album", album_path(album)
     \|
     - if current_user.role?(:admin) || album.user == current_user

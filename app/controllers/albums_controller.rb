@@ -6,11 +6,13 @@
 
   def index
     @albums = Album.all
+
   end
 
   def show
     @photo = Photo.new
     @album = Album.find params[:id]
+    @photos = @album.photos.plusminus_tally.order('plusminus_tally DESC').all
   end
 
   def new

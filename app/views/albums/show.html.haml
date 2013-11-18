@@ -8,7 +8,10 @@
   Album Description :
   = @album.description
   %br
-  %br
+
+
+  /Must show just current user albums
+
   = link_to "View all Albums", albums_path
   \|
   - if current_user.role?(:admin) || @album.user == current_user
@@ -30,18 +33,18 @@
 %br
 
 %h3 photos in album
-- @album.photos.each do |photo|
+/@photos
+/ - @photos_ordered = @album.photos.sort_by{ |post| post.votes_for.size }.reverse
+- @photos.each do |photo|
   %ul
     %li
-      = image_tag photo.image_url(:thumb), :width => "400px"
+      = link_to image_tag(photo.image_url(:thumb), :width => "400px"), photo_path(photo)
     %li
       = photo.title
     %li
       = photo.description
     %li
       = photo.tag_list
-  = link_to "show photo", photo_path(photo)
-  \|
   - if current_user.role?(:admin) || @album.user == current_user
     = link_to "Remove photo", photo_path(photo), method: :delete
   %hr
