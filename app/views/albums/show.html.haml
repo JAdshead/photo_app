@@ -33,7 +33,7 @@
 - @album.photos.each do |photo|
   %ul
     %li
-      = image_tag photo.image, :width => "400px"
+      = link_to image_tag(photo.image, :width => "400px"), photo_path(photo)
     %li
       = photo.title
     %li
