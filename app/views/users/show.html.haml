@@ -2,6 +2,10 @@
 = @user.name
 %br/
 = @user.email
+%br/
+= @user.photos.first.image(:thumb)
+ user form is not complete to upload
+%br/
 %h3 Albums
 %ul
   - for album in @user.albums

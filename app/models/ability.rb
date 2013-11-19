@@ -19,6 +19,10 @@ class Ability
           album.user == user
       end
 
+      can :edit, Album do |album|
+          album.user == user
+      end
+
       can :create, Photo
       can :manage, Photo do |photo|
           photo.user == user
