@@ -19,6 +19,7 @@ PhotoApp::Application.routes.draw do
   end
 
   resources :comments
+  resources :searches, only: [:create]
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
