@@ -1,5 +1,5 @@
 %h2 Search results
 - @photos.each do |photo|
   %li
-    = image_tag photo.image
-    = photo.tags
+    = link_to image_tag(photo.image.thumb), photo
+    = photo.tag_list

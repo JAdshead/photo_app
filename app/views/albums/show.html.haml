@@ -33,8 +33,6 @@
 %br
 
 %h3 photos in album
-/@photos
-/ - @photos_ordered = @album.photos.sort_by{ |post| post.votes_for.size }.reverse
 - @photos.each do |photo|
   %ul
     %li
