@@ -7,3 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+user=User.new(:email=>'admin@admin.com',:name=>'admin',:password=>'password', :role=>'admin')
+user.skip_confirmation!
+user.save!
