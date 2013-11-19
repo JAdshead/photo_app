@@ -2,15 +2,12 @@
 = @user.name
 %br/
 = @user.email
-%br/
-= @user.image_url(:thumb)
-%br/
 %h3 Albums
 %ul
   - for album in @user.albums
     - photo = album.photos.plusminus_tally.order('plusminus_tally DESC').first
     %li
-      = link_to image_tag(photo.image, :width => "100px"), album
+      = image_tag photo.image.thumb if photo.image?
 
 - if can? :create, Album
   = link_to 'Create Album', new_album_path(:user_id => @user)
