@@ -7,7 +7,7 @@
   <%= f.text_field :name, :autofocus => true %></div>
 
   <div><%= f.label :avatar %><br />
-  <%= f.text_field :avatar %></div>
+  <%= f.file_field :avatar %></div>
 
 
   <% if !current_user.passwordSet %>

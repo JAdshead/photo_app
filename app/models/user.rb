@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
 
   acts_as_voter
   has_karma :photos, :as => :submitter, :weight => [ 1.0, -0.5 ]
+  mount_uploader :avatar, ImageUploader
 
   def self.from_omniauth(auth)
     if user = User.find_by_email(auth.info.email)
