@@ -21,7 +21,7 @@ gem 'cancan'
 gem 'acts-as-taggable-on'
 gem "select2-rails"
 gem 'textacular', '~> 3.0'
-
+gem 'rmagick'
 gem 'thumbs_up'
 
 
