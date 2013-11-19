@@ -14,8 +14,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
     ActionController::Base.helpers.asset_path "placeholder.jpg" 
   end
 
-  version :photo_resize do
-    process :resize_to_fit => [100, 100]
+  version :thumb do
+    process :resize_to_fit => [200, 200]
   end
 
 end
