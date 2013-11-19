@@ -1,18 +1,19 @@
 %h3 User profile
+
 = image_tag avatar_url(@user)
+
 %br
 = @user.name
 %br/
 = @user.email
 %br/
-= @user.photos.first.image(:thumb)
+/ = @user.photos.first.image(:thumb)
 %br/
 %h3 Albums
 %ul
   - for album in @user.albums
     - photo = album.photos.plusminus_tally.order('plusminus_tally DESC').first
     %li
-
       = link_to image_tag(photo.image.thumb), album if photo.image?
 
 - if can? :create, Album

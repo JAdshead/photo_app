@@ -16,9 +16,14 @@
 
 - if can? :vote_up, :vote_down, @photo
   %br
-  = link_to 'UP VOTE for this photo!', vote_up_photo_path(@photo), :method => :post
-  \|
-  = link_to 'DOWN VOTE for this photo!', vote_down_photo_path(@photo), :method => :post
+  - if current_user.voted_against?(@photo)
+    %p You have voted against this photo
+  - elsif current_user.voted_for?(@photo)
+    %p You have voted for this photo
+  - else current_user.voted_against?(@photo)
+    = link_to 'UP VOTE for this photo!', vote_up_photo_path(@photo), :method => :post
+    \|
+    = link_to 'DOWN VOTE for this photo!', vote_down_photo_path(@photo), :method => :post
 
 
 - if can? :create, @comment
