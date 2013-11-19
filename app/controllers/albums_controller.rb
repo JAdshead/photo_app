@@ -23,8 +23,11 @@
   def create
     @album = Album.new params[:album]
     @album.user_id = current_user.id
-    @album.save
-    redirect_to @album
+    if @album.save
+      redirect_to @album, notice: "Album was successfully created!"
+    else
+      render action: "new"
+    end
   end
 
   def edit

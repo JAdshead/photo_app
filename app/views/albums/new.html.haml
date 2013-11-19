@@ -1,5 +1,7 @@
 %h3 New Album
-
+%ul.errors
+  - @album.errors.full_messages.each do |error|
+    %li= error
 = form_for(@album) do |f|
   = f.label :title
   = f.text_field :title
