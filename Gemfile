@@ -16,14 +16,15 @@ gem 'haml-rails'
 gem 'devise'
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
+gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 gem 'cancan'
 gem 'acts-as-taggable-on'
 gem "select2-rails"
 gem 'textacular', '~> 3.0'
 gem 'rmagick'
 gem 'thumbs_up'
-
 
 
 # Gems used only for assets and not required

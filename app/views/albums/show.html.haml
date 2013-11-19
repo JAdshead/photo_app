@@ -14,7 +14,7 @@
 
   = link_to "View all Albums", albums_path
   \|
-  - if current_user.role?(:admin) || @album.user == current_user
+  - if can? :edit, @album
     = link_to "Edit Album", edit_album_path(@album)
 
 
@@ -45,7 +45,7 @@
       = photo.description
     %li
       = photo.tag_list
-  - if current_user.role?(:admin) || @album.user == current_user
+  - if can? :destroy, photo
     = link_to "Remove photo", photo_path(photo), method: :delete
   %hr
 
@@ -56,7 +56,7 @@
 
 = link_to "View all Albums", albums_path
 \|
-- if current_user.role?(:admin) || @album.user == current_user
+- if can? :manage, @album
   = link_to "Edit Album", edit_album_path(@album)
   \|
   = link_to "Delete Album", album_path(@album), method: :delete
