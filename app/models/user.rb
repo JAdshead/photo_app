@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
           }
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :image, :role, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :avatar, :image, :role, :email, :password, :password_confirmation, :remember_me
 
   has_many :albums
   has_many :comments
@@ -40,6 +40,7 @@ class User < ActiveRecord::Base
         user.name = auth.info.name
         user.role = "user"
         user.password = Devise.friendly_token[0, 20]
+        # user.send_reset_password_instructions
         user.skip_confirmation!
         user
       end
