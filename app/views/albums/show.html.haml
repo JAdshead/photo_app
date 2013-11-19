@@ -19,6 +19,10 @@
 
 
     %h3 Form to Add photo
+
+    %ul.errors
+      - @photo.errors.full_messages.each do |error|
+        %li= error
     = form_for(@photo) do |f|
       = hidden_field_tag :album_id, @album.id
       = f.label :title

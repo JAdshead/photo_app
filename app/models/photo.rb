@@ -9,4 +9,6 @@ class Photo < ActiveRecord::Base
   belongs_to :album
   has_many :comments
 
+  validates :title, :description, :image, presence: true
+
 end
