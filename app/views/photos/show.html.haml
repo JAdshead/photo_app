@@ -40,8 +40,8 @@
         = link_to 'Delete Comment', comment, method: :delete
 
 
-- if current_user.role?(:admin) || @photo.album.user == current_user
-  = link_to "edit photo", edit_photo_path(@photo)
+/ - if current_user.role?(:admin) || @photo.album.user == current_user
+= link_to "edit photo", edit_photo_path(@photo)
 
 
 
