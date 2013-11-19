@@ -19,8 +19,12 @@ load_and_authorize_resource
     @comment = Comment.new params[:comment]
     @comment.photo_id = params[:photo_id]
     @comment.user_id = current_user.id
-    @comment.save
-    redirect_to @comment.photo
+    if @comment.save
+      redirect_to @comment.photo
+    else
+      @photo = Photo.find params[:photo_id]
+      render :template => "photos/show"
+    end
   end
 
   def edit

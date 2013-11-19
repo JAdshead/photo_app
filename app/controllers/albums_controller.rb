@@ -24,7 +24,7 @@
     @album = Album.new params[:album]
     @album.user_id = current_user.id
     if @album.save
-      redirect_to @album, notice: "Album was successfully created!"
+      redirect_to @album
     else
       render action: "new"
     end
@@ -35,9 +35,12 @@
   end
 
   def update
-    album = Album.find params[:id]
-    album.update_attributes params[:album]
-    redirect_to album
+    @album = Album.find params[:id]
+    if @album.update_attributes params[:album]
+      redirect_to @album
+    else
+      render action: "edit"
+    end
   end
 
   def destroy
