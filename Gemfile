@@ -16,7 +16,9 @@ gem 'haml-rails'
 gem 'devise'
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
+gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 gem 'cancan'
 gem 'acts-as-taggable-on'
 gem "select2-rails"
