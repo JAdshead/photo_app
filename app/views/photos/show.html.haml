@@ -12,13 +12,12 @@
 
 = @photo.description
 
-= image_tag @photo.image, :width => "400px"
-
+= image_tag @photo.image_url(:thumb), :width => "400px"
 
 %br
-= link_to 'UP VOTE for this post!', vote_up_photo_path(@photo), :method => :post
+= link_to 'UP VOTE for this photo!', vote_up_photo_path(@photo), :method => :post
 \|
-= link_to 'DOWN VOTE for this post!', vote_down_photo_path(@photo), :method => :post
+= link_to 'DOWN VOTE for this photo!', vote_down_photo_path(@photo), :method => :post
 
 %h3 Form to Add a Comment
 

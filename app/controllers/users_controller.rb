@@ -11,9 +11,7 @@ class UsersController < Devise::RegistrationsController
   end
 
   def create
-    # run the default version in Devise::RegistrationsController
     super
-    # then run our custom logic
     @user.role = 'user'
     @user.save!
   end

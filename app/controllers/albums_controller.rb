@@ -1,16 +1,18 @@
   class AlbumsController < ApplicationController
 
+  before_filter :authenticate_user!, except: [:show, :index]
   load_and_authorize_resource
 
-  before_filter :authenticate_user!, except: [:show, :index]
 
   def index
     @albums = Album.all
+
   end
 
   def show
     @photo = Photo.new
     @album = Album.find params[:id]
+    @photos = @album.photos.plusminus_tally.order('plusminus_tally DESC').all
   end
 
   def new
