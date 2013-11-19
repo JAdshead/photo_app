@@ -13,3 +13,13 @@
  *= require select2
  */
 
+
+/**********************************
+** Some style for error messages **
+********* fully editable **********
+***********************************/
+
+.errors {
+  background-color: red;
+}
+

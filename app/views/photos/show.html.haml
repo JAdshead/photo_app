@@ -23,6 +23,9 @@
 
 - if can? :create, @comment
   %h3 Form to Add a Comment
+  %ul.errors
+    - @comment.errors.full_messages.each do |error|
+      %li= error
 
   = form_for(@comment) do |f|
     = hidden_field_tag :photo_id, @photo.id
