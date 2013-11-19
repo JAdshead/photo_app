@@ -1,7 +1,12 @@
 %h3 User profile
+= image_tag avatar_url(@user)
+%br
 = @user.name
 %br/
 = @user.email
+%br/
+/= @user.photos.first.image(:thumb)
+%br/
 %h3 Albums
 %ul
   - for album in @user.albums

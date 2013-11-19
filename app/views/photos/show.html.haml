@@ -14,19 +14,22 @@
 
 = image_tag @photo.image.photo_resize
 
-%br
-= link_to 'UP VOTE for this photo!', vote_up_photo_path(@photo), :method => :post
-\|
-= link_to 'DOWN VOTE for this photo!', vote_down_photo_path(@photo), :method => :post
+- if can? :vote_up, :vote_down, @photo
+  %br
+  = link_to 'UP VOTE for this photo!', vote_up_photo_path(@photo), :method => :post
+  \|
+  = link_to 'DOWN VOTE for this photo!', vote_down_photo_path(@photo), :method => :post
 
-%h3 Form to Add a Comment
 
-= form_for(@comment) do |f|
-  = hidden_field_tag :photo_id, @photo.id
-  = f.label :description
-  = f.text_field :description
-  %br/
-  = f.submit
+- if can? :create, @comment
+  %h3 Form to Add a Comment
+
+  = form_for(@comment) do |f|
+    = hidden_field_tag :photo_id, @photo.id
+    = f.label :description
+    = f.text_field :description
+    %br/
+    = f.submit
 
 
 %p Comments
@@ -36,12 +39,12 @@
       = comment.description
     %li
       = comment.user.email
-      - if current_user.role?(:admin) || comment.user == current_user
+      - if can? :destroy, comment
         = link_to 'Delete Comment', comment, method: :delete
 
-
-- if current_user.role?(:admin) || @photo.album.user == current_user
+- if can? :edit, @photo
   = link_to "edit photo", edit_photo_path(@photo)
+
 
 
 

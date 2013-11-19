@@ -9,4 +9,5 @@ class ApplicationController < ActionController::Base
     redirect_to root_url , alert: "You can't access this page"
   end
 
+
 end

@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
           }
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :image, :role, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :avatar, :image, :role, :email, :password, :password_confirmation, :remember_me
 
   has_many :albums
   has_many :comments
@@ -24,7 +24,8 @@ class User < ActiveRecord::Base
   has_many :providers
 
   acts_as_voter
-  has_karma :photos, :as => :submitter, :weight => [ 0.5, -0.5 ]
+  has_karma :photos, :as => :submitter, :weight => [ 1.0, -0.5 ]
+  mount_uploader :avatar, ImageUploader
 
   # def self.from_omniauth(auth, current_user)
   #   authorization = Authorization.where(:provider => auth.provider, :uid => auth.uid.to_s, :token => auth.credentials.token, :secret => auth.credentials.secret).first_or_initialize
@@ -62,6 +63,7 @@ class User < ActiveRecord::Base
         user.name = auth.info.name
         user.role = "user"
         user.password = Devise.friendly_token[0, 20]
+        # user.send_reset_password_instructions
         user.skip_confirmation!
         user
       end

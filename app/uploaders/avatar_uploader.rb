@@ -1,4 +1,4 @@
-class ImageUploader < CarrierWave::Uploader::Base
+class AvatarUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::RMagick
   include CarrierWave::MimeTypes
@@ -14,11 +14,8 @@ class ImageUploader < CarrierWave::Uploader::Base
     ActionController::Base.helpers.asset_path "placeholder.jpg" 
   end
 
-  version :thumb do
-    process :resize_to_fit => [200, 200]
+  version :photo_resize do
+    process :resize_to_fit => [100, 100]
   end
 
-  version :photo_resize do
-    process :resize_to_fit => [800, 800]
-  end
 end
