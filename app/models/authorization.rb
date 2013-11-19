@@ -1,37 +1,37 @@
-class Authorization < ActiveRecord::Base
+# class Authorization < ActiveRecord::Base
 
-  belongs_to :user
+#   belongs_to :user
 
-  after_create :fetch_details
+#   after_create :fetch_details
 
-  attr_accessor :temp_auth_hash
+#   attr_accessor :temp_auth_hash
 
-  def fetch_details
-    self.send("fetch_details_from_#{self.provider.downcase}")
-  end
+#   def fetch_details
+#     self.send("fetch_details_from_#{self.provider.downcase}")
+#   end
 
 
-  def fetch_details_from_facebook
-    graph = Koala::Facebook::API.new(self.token)
-    facebook_data = graph.get_object("me")
-    self.username = facebook_data['username']
-    self.save
-    self.user.name = facebook_data['username'] if self.user.name.blank?
-    # self.user.remote_image_url = "http://graph.facebook.com/" + self.username + "/picture?type=large" if self.user.image.blank?
-    # self.user.location = facebook_data['location'] if self.user.location.blank?
-    self.user.save
-  end
+#   def fetch_details_from_facebook
+#     graph = Koala::Facebook::API.new(self.token)
+#     facebook_data = graph.get_object("me")
+#     self.username = facebook_data['username']
+#     self.save
+#     self.user.name = facebook_data['username'] if self.user.name.blank?
+#     # self.user.remote_image_url = "http://graph.facebook.com/" + self.username + "/picture?type=large" if self.user.image.blank?
+#     # self.user.location = facebook_data['location'] if self.user.location.blank?
+#     self.user.save
+#   end
 
-  def fetch_details_from_google_oauth2
-    google_oauth2_data = temp_auth_hash
-    self.username = google_oauth2_data['name']
-    self.save
-    self.user.name = google_oauth2_data['username'] if self.user.name.blank?
-    # self.user.remote_image_url = "https://plus.google.com/" + self.username + "/photo.jpg" if self.user.image.blank?
-    # self.user.location = "" if self.user.location.blank?
-    self.user.save
-  end
-end
+#   def fetch_details_from_google_oauth2
+#     google_oauth2_data = temp_auth_hash
+#     self.username = google_oauth2_data['name']
+#     self.save
+#     self.user.name = google_oauth2_data['username'] if self.user.name.blank?
+#     # self.user.remote_image_url = "https://plus.google.com/" + self.username + "/photo.jpg" if self.user.image.blank?
+#     # self.user.location = "" if self.user.location.blank?
+#     self.user.save
+#   end
+# end
 
 # facebook auth hash
 

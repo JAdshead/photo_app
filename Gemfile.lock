@@ -285,6 +285,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   meta_request
+  omniauth
   omniauth-facebook
   omniauth-google-oauth2
   pg
