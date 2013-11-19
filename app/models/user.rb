@@ -53,6 +53,7 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.name = auth.info.name
+      # user.avatar = URI.parse(auth.info.image) if auth.info.image?
       user.role = "user"
       user
     else
@@ -61,6 +62,11 @@ class User < ActiveRecord::Base
         user.uid = auth.uid
         user.email = auth.info.email
         user.name = auth.info.name
+        # graph = Koala::Facebook::API.new(auth.credentials.token)
+        # profile = "http://graph.facebook.com/" + graph.get_object("me")['username'] + "/picture?type=large"
+        # user.avatar = URI.parse(profile)
+        # # user.avatar_url() = auth.info.image
+        # # URI.parse(auth.info.image) if auth.info.image?
         user.role = "user"
         user.password = Devise.friendly_token[0, 20]
         # user.send_reset_password_instructions
@@ -69,6 +75,7 @@ class User < ActiveRecord::Base
       end
     end
   end
+
 
   def role?(r)
     self.role == r.to_s

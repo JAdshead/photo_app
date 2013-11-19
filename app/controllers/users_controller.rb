@@ -49,6 +49,6 @@ class UsersController < Devise::RegistrationsController
       params[:user][:password].present?
   end
 
-  
+
 
 end
