@@ -2,17 +2,27 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.14'
 
+gem 'thin'
+
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
 
 
-
 # Added Gems
 gem 'haml-rails'
-
-
+gem 'devise'
+gem 'carrierwave'
+gem "fog", "~> 1.3.1"
+gem 'omniauth-google-oauth2'
+gem 'cancan'
+gem 'acts-as-taggable-on'
+gem "select2-rails"
+gem 'textacular', '~> 3.0'
+gem 'rmagick'
+gem 'thumbs_up'
 
 
 
@@ -59,4 +69,9 @@ group :development, :test do
   gem "capybara"
   gem "factory_girl_rails"
   gem "faker"
+end
+
+group :test do
+  gem 'guard-rspec'
+  gem 'launchy'
 end

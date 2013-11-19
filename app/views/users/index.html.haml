@@ -1,0 +1,11 @@
+%h3 All Users
+%ul
+  - @users.each do |user|
+    %li
+      Email : #{user.email} 
+    %li
+      Role : #{user.role}
+    %li
+      = link_to user.name, user
+    %br
+

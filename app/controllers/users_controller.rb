@@ -1,30 +1,21 @@
-class UsersController < ApplicationController
+class UsersController < Devise::RegistrationsController
+
+  load_and_authorize_resource
 
   def index
-
+    @users = User.all
   end
 
   def show
-
-  end
-
-  def new
-    
+    @user = User.find params[:id]
   end
 
   def create
-
+    super
+    @user.role = 'user'
+    @user.save!
   end
 
-  def edit
-  end
-
-  def update
-
-  end
-
-  def destroy
-
-  end
   
+
 end
