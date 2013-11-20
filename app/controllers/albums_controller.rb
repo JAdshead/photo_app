@@ -20,7 +20,16 @@
   def create
     @album.user_id = current_user.id
     if @album.save
-      redirect_to @album
+      photo = Photo.new params[:photo]
+      if photo.save
+        @album.photos << photo
+      else
+        puts
+        puts 'ERROR'
+        puts photo.inspect
+        puts
+      end
+      redirect_to current_user
     else
       render action: "new"
     end

@@ -1,8 +1,8 @@
 
 $ ->
 
-  ->
-    $('#photo_tags_list').select2({tags:[]})
+  
+  $('#photo_tags_list').select2({tags:[]})
 
   $overlay = $('.overlay')
   $('.search').on 'click', =>
