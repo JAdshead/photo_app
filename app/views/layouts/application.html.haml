@@ -13,7 +13,7 @@
   
     .user-nav.cf
       .nav-logo
-        = image_tag "/assets/logo.png"
+        = link_to image_tag("/assets/logo.png"), root_path
       .nav-links
         - if user_signed_in?
           = link_to "Logged in as #{current_user.email}", current_user 
