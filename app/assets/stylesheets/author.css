@@ -22,7 +22,7 @@
 body {
   font-family: 'Lato', sans-serif;
   letter-spacing: 0.1em;
-  color: #424b51; 
+  color: #424b51;
   font-weight: 400;
   font-size: 16px;
 }
@@ -307,4 +307,106 @@ font-size: 1.05em;
     font-size: 30px;
 }
 
+/*** SIGNIN PAGE ***/
 
+.devise-form-container {
+  padding-top: 10em;
+  background-color: #f2f6f7;
+}
+
+.inputbox-outer{
+  font-size: 2em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+/*  margin: auto;*/
+ /* border-radius: 1em;*/
+}
+
+.inputbox-inner{
+  width:50%;
+/*  display: block;
+  margin: 0, auto;*/
+/*  padding: 3em;*/
+/*  font-size: 2em;
+  margin: auto;*/
+ /* border-radius: 1em;*/
+}
+
+.inputbox-header {
+  background: #363e43;
+  color: white;
+  border-width:5px;
+  border-style: solid;
+  border-color: #f2f6f7;
+}
+
+.inputbox-body {
+  background-color: white;
+/*  color: white;*/
+  border-width:5px;
+  border-style: solid;
+  border-color: #f2f6f7;
+  padding-top: 2em;
+}
+
+.signin {
+  text-align: center;
+  background-color: blue;
+}
+
+.input-select-disable {
+    outline-color: none;
+}
+
+.sign-button {
+  color: red;
+}
+
+.signin-button input {
+  background-color: #2e3132;
+
+}
+
+.form-header{
+  text-align: center;
+  border-color: white;
+  border-style: solid;
+  border-width: 2px;
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+.inputbox-field {
+  text-align: center;
+  border-color: white;
+  border-style: solid;
+  border-width: 2px;
+  margin-left: 3em;
+  margin-right: 3em;
+  padding-top: 1em;
+}
+
+.inputbox-field input {
+  width: 100%;
+  color: white;
+/*  border-width: 10px, 1px, 1px, 1px;*/
+  border-style: solid;
+  border-color: #f2f6f7;
+  border-radius: 4px;
+  box-shadow: 0px -3px #f2f6f7;
+  font-weight: 200;
+}
+
+.rememberme {
+  width: 100%;
+  margin-left: 3em;
+  margin-right: 3em;
+  padding-top: 1em;
+}
+
+.devise-shared-links a {
+  font-size: 10px;
+}
