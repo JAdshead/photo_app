@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :photo do
     title { Faker::Name.first_name }
-    description { Faker::Lorem.sentence}
+    description { Faker::Lorem.sentence }
 
     user
     album
