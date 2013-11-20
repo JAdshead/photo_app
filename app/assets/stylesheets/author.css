@@ -16,6 +16,11 @@
   clear: both;
 }
 
+.errors {
+  color: red;
+}
+
+
 /** FONT STUFF **/
 
 
