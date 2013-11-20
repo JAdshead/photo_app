@@ -47,6 +47,9 @@ class User < ActiveRecord::Base
   #   authorization.user
   # end
 
+  def role?(r)
+    self.role == r.to_s
+  end
 
   def self.from_omniauth(auth)
     if user = User.find_by_email(auth.info.email)

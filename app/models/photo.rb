@@ -16,7 +16,7 @@ class Photo < ActiveRecord::Base
   end
 
   validates :title, :description, :image, presence: true
-  
+    
 end
 
 
