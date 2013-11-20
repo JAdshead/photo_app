@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   has_many :albums
   has_many :comments
   has_many :photos, through: :album
-  has_many :providers
+  has_many :authorizations
 
   acts_as_voter
   has_karma :photos, :as => :submitter, :weight => [ 1.0, -0.5 ]
@@ -47,31 +47,47 @@ class User < ActiveRecord::Base
   #   authorization.user
   # end
 
-  def role?(r)
+  def has_role?(r)
     self.role == r.to_s
   end
 
   def self.from_omniauth(auth)
+    # authorization = Authorization.where(:provider => auth.provider, :uid => auth.uid.to_s, :token => auth.credentials.token, :secret => auth.credentials.secret).first_or_initialize
     if user = User.find_by_email(auth.info.email)
-      profile_set(auth, user)
-      user
-    else
-      User.where(auth.slice(:provider, :uid)).first_or_create do |user|
+      if authorization = user.authorizations.where(auth.slice(:provider, :uid)).count > 0
+        user
+      else
         profile_set(auth, user)
-        user.email = auth.info.email
-        user.password = Devise.friendly_token[0, 20]
-        user.skip_confirmation!
+        user.authorizations.create! :provider => auth.provider, :uid => auth.uid
         user
       end
+    else
+      user = User.new
+      profile_set(auth, user)
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+      user.skip_confirmation!
+      user.save!
+      authorization = Authorization.where(auth.slice(:provider, :uid)).first_or_create do |a|
+        a.provider = auth.provider
+        a.uid = auth.uid
+        a.user = user
+        a
+      end
+      user
     end
   end
 
+  # def self.authorization_set(auth, a)
+
+  # end
 
   def self.profile_set(auth, user)
-    user.provider = auth.provider
-    user.uid = auth.uid
-    user.name = auth.info.name
-    user.role = "user"
+      # user.authorization # add to user authorizations
+      # user.provider = auth.provider
+      # user.uid = auth.uid
+    user.name = auth.info.name unless user.name?
+    user.role = "user" unless user.role?
     image_set(auth, user) unless user.avatar?
   end
 

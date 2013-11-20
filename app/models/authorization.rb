@@ -1,6 +1,10 @@
-# class Authorization < ActiveRecord::Base
+class Authorization < ActiveRecord::Base
 
-#   belongs_to :user
+attr_accessible :provider, :uid
+
+belongs_to :user
+
+end
 
 #   after_create :fetch_details
 
@@ -31,7 +35,7 @@
 #     # self.user.location = "" if self.user.location.blank?
 #     self.user.save
 #   end
-# end
+
 
 # facebook auth hash
 
