@@ -1,9 +1,13 @@
 class SearchesController < ApplicationController
   def create
     query_terms = params[:query].split
-    # binding.pry
     @photos = Photo.tagged_with(query_terms, :any => true)
-    render :index
+    if @photos == []
+      @error_message = "Sorry, no photo with ' #{query_terms.join(' - ')} ' tag/s."
+      render :index
+    else
+      render :index
+    end
   end
 end
 

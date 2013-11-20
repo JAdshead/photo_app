@@ -42,9 +42,15 @@
         - @photos.each do |photo|
           .home-grid-photo{style: "background-image: url(#{photo.image_url(:home_grid)})"}
             .background-home-grid-photo
-              %li.background AUTHOR
-              = link_to photo.album.user.name, photo.album.user
-              %hr
-              %li.background PHOTO TITLE
-              = link_to photo.title, photo
+              .background-page-avatar-picture
+                =link_to image_tag(avatar_url(photo.album.user)), photo.album.user
+              = link_to(photo) do
+        
+                %h1.background
+                  = photo.title
+                %h1.background
+                  Score 
+                  .score-link 
+                    #{photo.votes_for - photo.votes_against }
+
 
