@@ -47,10 +47,10 @@ h1 {
 .user-nav {
   height: 70px;
   background: #363e43;
-  padding: auto 0; 
+  padding: auto 0;
   position: fixed;
   z-index: 2;
-  width: 100%; 
+  width: 100%;
   top: 0;
 
 }
@@ -179,7 +179,7 @@ h1 {
 
 .profile-grid-photo img {
   display: block;
-  width: 516px;
+  width: 100%;
 }
 
 .profile-grid-form {
