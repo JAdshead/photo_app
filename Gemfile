@@ -25,6 +25,7 @@ gem "select2-rails"
 gem 'textacular', '~> 3.0'
 gem 'rmagick'
 gem 'thumbs_up'
+gem 'will_paginate', '~> 3.0'
 
 
 # Gems used only for assets and not required
