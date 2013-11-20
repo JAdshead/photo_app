@@ -24,7 +24,7 @@ body {
   letter-spacing: 0.1em;
   color: #424b51; 
   font-weight: 400;
-
+  font-size: 16px;
 }
 
 
@@ -114,6 +114,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tagline {
+  font-size: 0.6em;
   margin-top: 55px;
 }
 
@@ -206,13 +207,23 @@ h1, h2, h3, h4, h5, h6 {
 
 .profile-grid-photo {
   width: 50%;
-  height: 300px;
-  padding: 20px;
+  height: auto;
+  width: 48%;
+  margin: 1%;
   float: left;
 }
 
+.profile-grid-photo.add{
+  background: url(/assets/new-album.png);
+  background-size: 48% auto;
+  width: 48%;
+  padding: 0px;
+  /*margin: 20px;*/
+  /*height: 240px;*/
+}
+
 .profile-grid-photo img {
-  display: block;
+  /*display: block;*/
   width: 100%;
 }
 
@@ -238,6 +249,9 @@ font-size: 1.05em;
   cursor: pointer;
 }
 
+::-webkit-input-placeholder {
+    color:    #d5d8d8;
+}
 
 .close {
   position: absolute;
@@ -252,7 +266,7 @@ font-size: 1.05em;
   top: 0; bottom: 0;
   right: 0; left: 0;
   display: none;
-  background:rgba(200,200,200,0.95);
+  background:rgba(255,255,255,0.95);
 }
 
 .overlay p {
@@ -261,10 +275,10 @@ font-size: 1.05em;
 }
 
 .overlay input {
-  color: white;
-  background:rgba(255,255,255,0.0);
+  color: #424b51;
+  background: none;
   padding: 20px;
-  font-size: 80px;
+  font-size: 8em;
   border: 0;
   margin: 40px;
 }

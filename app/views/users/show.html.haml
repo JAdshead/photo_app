@@ -6,13 +6,13 @@
     .profile-grid-photo
       - if album.photos.empty?
         = link_to album do 
-          = image_tag "./album_no_photo"
+          = image_tag "/assets/new-album.png"
       - else
         - photo = album.photos.plusminus_tally.order('plusminus_tally DESC').first
         = link_to album do
           = image_tag photo.image_url(:profile_grid)
-  .profile-grid-photo
-    Add album
+  .profile-grid-photo.add
+    %p.plus-album +
 
 .sidebar-content-area
   .sidebar-content

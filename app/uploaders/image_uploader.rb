@@ -27,7 +27,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :profile_grid do 
-    process :resize_to_fill => [516, 240]
+    process :resize_to_fill => [530, 240]
   end
   
   version :avatar_resize do
