@@ -47,32 +47,37 @@ class User < ActiveRecord::Base
   #   authorization.user
   # end
 
-
   def self.from_omniauth(auth)
     if user = User.find_by_email(auth.info.email)
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.name = auth.info.name
-      # user.avatar = URI.parse(auth.info.image) if auth.info.image?
-      user.role = "user"
+      profile_set(auth, user)
       user
     else
       User.where(auth.slice(:provider, :uid)).first_or_create do |user|
-        user.provider = auth.provider
-        user.uid = auth.uid
+        profile_set(auth, user)
         user.email = auth.info.email
-        user.name = auth.info.name
-        # graph = Koala::Facebook::API.new(auth.credentials.token)
-        # profile = "http://graph.facebook.com/" + graph.get_object("me")['username'] + "/picture?type=large"
-        # user.avatar = URI.parse(profile)
-        # # user.avatar_url() = auth.info.image
-        # # URI.parse(auth.info.image) if auth.info.image?
-        user.role = "user"
         user.password = Devise.friendly_token[0, 20]
-        # user.send_reset_password_instructions
         user.skip_confirmation!
         user
       end
+    end
+  end
+
+  def self.profile_set(auth, user)
+    user.provider = auth.provider
+    user.uid = auth.uid
+    user.name = auth.info.name
+    user.role = "user"
+    image_set(auth, user) unless user.avatar?
+  end
+
+  def self.image_set(auth, user)
+    case auth.provider
+    when "facebook"
+      graph = Koala::Facebook::API.new(auth.credentials.token)
+      profile = "http://graph.facebook.com/" + graph.get_object("me")['username'] + "/picture?type=large"
+      user.remote_avatar_url = profile
+    when "google_oauth2"
+      user.remote_avatar_url = auth.info.image
     end
   end
 
@@ -80,4 +85,7 @@ class User < ActiveRecord::Base
   def role?(r)
     self.role == r.to_s
   end
+
+
+
 end
