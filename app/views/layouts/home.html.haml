@@ -1,0 +1,44 @@
+!!!
+%html
+  %head
+    %title PHTGRPHR
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lato:300,400,700", :rel => "stylesheet", :type => "text/css"
+    = stylesheet_link_tag    "application", :media => "all"
+    = stylesheet_link_tag "normalize", :media => "all"
+    = stylesheet_link_tag    "main", :media => "all"
+    = stylesheet_link_tag    "author", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
+    .feature
+      .user-nav-home
+        - if user_signed_in?
+          = link_to "Logged in as #{current_user.email}", current_user
+          = link_to 'Logout',  destroy_user_session_path, method: :delete
+        - else
+          = link_to 'Sign up', new_user_registration_path
+
+          = link_to 'Login', new_user_session_path
+      .feature-content
+        .logo
+          = image_tag "/assets/logo.png"
+        .tagline
+          %h1 Creating beautiful albums of your favourite photos.
+    .pagination
+    = will_paginate @photos
+    .grid-container-home.cf
+      - @photos.each do |photo|
+        .home-grid-photo
+          = link_to photo do
+            = image_tag photo.image_url(:home_grid)
+
+
+
+
+//.search
+//= form_tag searches_path do
+// = label_tag :search
+//= text_field_tag :query
+//= submit_tag "Search"
+

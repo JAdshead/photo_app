@@ -1,11 +1,20 @@
-%h3 New Album
 
-= form_for(@album) do |f|
-  = f.label :title
-  = f.text_field :title
-  %br/
-  = f.label :description
-  = f.text_field :description
-  %br
-  .actions
-    = f.submit 'Create Album'
+
+.header-margin
+
+  %ul.errors
+  - @album.errors.full_messages.each do |error|
+    %li= error
+
+  %h3 New Album
+
+  = form_for(@album) do |f|
+    = f.label :title
+    = f.text_field :title
+    %br/
+    = f.label :description
+    = f.text_field :description
+    %br
+    .actions
+      = f.submit 'Create Album'
+

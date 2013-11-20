@@ -9,6 +9,8 @@ class Ability
 
     elsif user.role? :user
       can :read, :all
+      can :vote_up, :all
+      can :vote_down, :all
 
       can :manage, User do |user_object|
           user_object == user
@@ -28,8 +30,6 @@ class Ability
           photo.user == user
       end
 
-      can :vote_up, Photo
-      can :vote_down, Photo
 
       can :update, Photo do |photo|
           photo.album.user == user

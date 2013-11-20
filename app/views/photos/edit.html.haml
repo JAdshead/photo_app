@@ -1,3 +1,7 @@
+%h3 Form to Edit a Photo
+%ul.errors
+  - @photo.errors.full_messages.each do |error|
+    %li= error
 = form_for(@photo) do |f|
   = f.label :title
   = f.text_field :title

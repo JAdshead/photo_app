@@ -47,6 +47,10 @@ class User < ActiveRecord::Base
   #   authorization.user
   # end
 
+  def role?(r)
+    self.role == r.to_s
+  end
+
   def self.from_omniauth(auth)
     if user = User.find_by_email(auth.info.email)
       profile_set(auth, user)
@@ -61,6 +65,7 @@ class User < ActiveRecord::Base
       end
     end
   end
+
 
   def self.profile_set(auth, user)
     user.provider = auth.provider
@@ -80,12 +85,5 @@ class User < ActiveRecord::Base
       user.remote_avatar_url = auth.info.image
     end
   end
-
-
-  def role?(r)
-    self.role == r.to_s
-  end
-
-
 
 end

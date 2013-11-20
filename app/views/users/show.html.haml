@@ -1,23 +1,26 @@
-%h3 User profile
-= image_tag avatar_url(@user)
-%br
-= @user.name
-%br/
-= @user.email
-%br/
-/= @user.photos.first.image(:thumb)
-%br/
-%h3 Albums
-%ul
-  - for album in @user.albums
-    - photo = album.photos.plusminus_tally.order('plusminus_tally DESC').first
-    %li
-      = image_tag photo.image.thumb if photo.image?
-
-- if can? :create, Album
-  = link_to 'Create Album', new_album_path(:user_id => @user)
-%hr
-/must be into edit profile but is currently not working
-/ = link_to 'Delete profile', @user, :method => :delete, :confirm => 'Are you sure? Many people love your photos!'
 
 
+
+.grid-content-area
+  - @user.albums.each do |album|
+    .profile-grid-photo
+      - if album.photos.empty?
+        = link_to album do 
+          = image_tag "./album_no_photo"
+      - else
+        - photo = album.photos.plusminus_tally.order('plusminus_tally DESC').first
+        = link_to album do
+          = image_tag photo.image_url(:profile_grid)
+
+.sidebar-content-area
+  .sidebar-content
+    = image_tag avatar_url(@user)
+    = @user.name
+    %br/
+    = @user.email
+    - if can? :create, Album
+      = link_to 'Create Album', new_album_path(:user_id => @user)
+    - if can? :update, User
+      = link_to 'Edit Profile', edit_user_registration_path
+    %h4 Albums
+    %h1 #{@user.albums.count}
