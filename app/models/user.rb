@@ -20,8 +20,8 @@ class User < ActiveRecord::Base
 
   has_many :albums
   has_many :comments
-  has_many :photos, through: :albums
-  has_many :providers
+  has_many :photos, through: :album
+  has_many :authorizations
 
   acts_as_voter
   has_karma :photos, :as => :submitter, :weight => [ 1.0, -0.5 ]
@@ -47,31 +47,59 @@ class User < ActiveRecord::Base
   #   authorization.user
   # end
 
-  def role?(r)
+  def has_role?(r)
     self.role == r.to_s
   end
 
   def self.from_omniauth(auth)
+    # authorization = Authorization.where(:provider => auth.provider, :uid => auth.uid.to_s, :token => auth.credentials.token, :secret => auth.credentials.secret).first_or_initialize
     if user = User.find_by_email(auth.info.email)
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.name = auth.info.name
-      user.role = "user"
-      user
-    else
-      User.where(auth.slice(:provider, :uid)).first_or_create do |user|
-        user.provider = auth.provider
-        user.uid = auth.uid
-        user.email = auth.info.email
-        user.name = auth.info.name
-        user.role = "user"
-        user.password = Devise.friendly_token[0, 20]
-        # user.send_reset_password_instructions
-        user.skip_confirmation!
+      if authorization = user.authorizations.where(auth.slice(:provider, :uid)).count > 0
+        user
+      else
+        profile_set(auth, user)
+        user.authorizations.create! :provider => auth.provider, :uid => auth.uid
         user
       end
+    else
+      user = User.new
+      profile_set(auth, user)
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+      user.skip_confirmation!
+      user.save!
+      authorization = Authorization.where(auth.slice(:provider, :uid)).first_or_create do |a|
+        a.provider = auth.provider
+        a.uid = auth.uid
+        a.user = user
+        a
+      end
+      user
     end
   end
 
+  # def self.authorization_set(auth, a)
+
+  # end
+
+  def self.profile_set(auth, user)
+      # user.authorization # add to user authorizations
+      # user.provider = auth.provider
+      # user.uid = auth.uid
+    user.name = auth.info.name unless user.name?
+    user.role = "user" unless user.role?
+    image_set(auth, user) unless user.avatar?
+  end
+
+  def self.image_set(auth, user)
+    case auth.provider
+    when "facebook"
+      graph = Koala::Facebook::API.new(auth.credentials.token)
+      profile = "http://graph.facebook.com/" + graph.get_object("me")['username'] + "/picture?type=large"
+      user.remote_avatar_url = profile
+    when "google_oauth2"
+      user.remote_avatar_url = auth.info.image
+    end
+  end
 
 end

@@ -27,26 +27,28 @@
       .feature-content
         .logo
           = image_tag "/assets/logo.png"
+
         .overlay
           %span.close Close
           = form_tag searches_path do
-            = text_field_tag :query, nil, :class => 'search-input', :placeholder => 'search...',:autocomplete =>"off" 
+            = text_field_tag :query, nil, :class => 'search-input', :placeholder => 'search...',:autocomplete =>"off"
             / = submit_tag "Search"
           
 
         .login-form
           / = render "devise/sessions/new"
 
-
-
-        .tagline 
-          %h1 Creating beautiful albums of your favourite photos. 
+        .tagline
+          %h1 Creating beautiful albums of your favourite photos.
     .pagination
-      = will_paginate @photos
-      .grid-container-home.cf
-        - @photos.each do |photo|
-          .home-grid-photo
-            = link_to photo do
-              = image_tag photo.image_url(:home_grid)
-
+    = will_paginate @photos
+    .grid-container-home.cf
+      - @photos.each do |photo|
+        .home-grid-photo{style: "background-image: url(#{photo.image_url(:home_grid)})"}
+          .background-home-grid-photo
+            %li.background AUTHOR
+            = link_to photo.album.user.name, photo.album.user
+            %hr
+            %li.background PHOTO TITLE
+            = link_to photo.title, photo
 
