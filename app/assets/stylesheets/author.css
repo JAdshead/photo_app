@@ -1,0 +1,296 @@
+
+/** CLEARFIX AND BOX-SIZING **/
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+.header-margin {
+  margin-top: 70px;
+}
+
+.cf {
+  clear: both;
+}
+
+/** FONT STUFF **/
+
+
+body {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.1em;
+  color: #424b51; 
+  font-weight: 400;
+
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  letter-spacing: 0.175em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+
+
+
+
+/** NAV **/
+
+.user-nav {
+  height: 70px;
+  background: #363e43;
+  padding: auto 0;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  top: 0;
+
+}
+
+.nav-links {
+  float: right;
+  padding-top: 24px;
+  opacity: 1;
+  margin-right: 50px;
+}
+
+.nav-links a {
+  margin-left: 30px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.nav-logo {
+  display: inline-block;
+  padding-top: 15px;
+}
+
+.nav-logo img {
+  width: 175px;
+  margin-left: 40px;
+  opacity: 1;
+}
+
+.user-nav-home {
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding-left: 1000px;
+  padding-top: 25px;
+  color: white;
+}
+
+.user-nav-home a {
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  margin: 0 20px;
+  opacity: 1
+}
+
+.user-nav-home a:hover {
+  opacity: 0.8
+}
+/*** HOMEPAGE ****/
+
+
+.feature {
+  background-image: url(/assets/hero.png);
+  height: 500px;
+  background-size: cover;
+  color: white;
+  background-color: #2e3132;
+}
+
+.feature-content {
+  text-align: center;
+  margin-top: 140px;
+}
+
+.tagline {
+  margin-top: 55px;
+}
+
+.grid-container-home {
+  margin-top: 20px
+}
+
+.home-grid-photo {
+  width: 33.3333%;
+  height: 300px;
+  margin-top: 20px;
+  padding: 0;
+  float: left;
+}
+
+.home-grid-photo img {
+  display: block;
+  width: 430px;
+  margin: auto;
+}
+
+.pagination {
+  text-align: center;
+}
+
+.background-home-grid-photo {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 20px;
+}
+
+li.background {
+  list-style: none;
+
+}
+
+/*** GRID SECTION **/
+
+.grid-content-area {
+  width: 80%;
+  height: 9999px;
+  background-color: #f2f6f7;
+  float: left;
+  margin-top: 70px;
+  padding: 20px;
+}
+
+
+/*** SIDEBAR SECTION **/
+
+.sidebar-content-area {
+  height: 100%;
+  width: 20%;
+  margin-top: 70px;
+  padding: 0;
+  position: fixed;
+  right: 0;
+}
+
+.sidebar-content {
+  padding: 0 35px;
+  font-weight: 400;
+}
+
+.sidebar-text {
+  margin-top: 4em;
+}
+
+.sidebar-text h1 {
+  margin-top: 2em;
+  font-size: 1.2em;
+}
+
+.sidebar-text span {
+  margin-top: 0;
+  font-size: 4em;
+  color: #94A9B1;
+}
+
+.profile-picture {
+  margin: 0;
+  display: block;
+}
+
+.profile-picture h3 {
+  text-align: center;
+  display: block;
+  color: #9EADB8;
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.profile-picture img {
+  border-radius: 100%;
+  margin: 4em auto 2em;
+  display: block;
+  width: 60%;
+}
+
+/*** PROFILE GRID ***/
+
+.profile-grid-photo {
+  width: 50%;
+  height: 300px;
+  padding: 20px;
+  float: left;
+}
+
+.profile-grid-photo img {
+  display: block;
+  width: 100%;
+}
+
+
+.profile-grid-form {
+  background: white;
+  width: 516px;
+  height: 240px;
+  display: block;
+  float: left;
+  margin: 30px 0px 30px 30px;
+}
+
+
+/* letter-spacing: 0.19em;
+text-transform: uppercase;
+font-weight: 400;
+font-size: 1.05em;
+=======
+/*** Search Fade Input ***/
+
+.search {
+  cursor: pointer;
+}
+
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; bottom: 0;
+  right: 0; left: 0;
+  display: none;
+  background:rgba(200,200,200,0.95);
+}
+
+.overlay p {
+  font-size: 2em;
+  text-align: center;
+}
+
+.overlay input {
+  color: white;
+  background:rgba(255,255,255,0.0);
+  padding: 20px;
+  font-size: 80px;
+  border: 0;
+  margin: 40px;
+}
+.overlay input:focus { outline: none; }
+
+.overlay .close {
+    position: absolute;
+    font-weight: 200;
+    top: 50px;
+    right: 100px;
+    font-size: 30px;
+}
+
+
