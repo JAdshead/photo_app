@@ -312,7 +312,7 @@ font-size: 1.05em;
 }
 
 ::-webkit-input-placeholder {
-    color:    #d5d8d8;
+    color: #d5d8d8;
 }
 
 .close {
@@ -363,7 +363,7 @@ font-size: 1.05em;
 }
 .user-container a {
   text-decoration: none;
-  color: ;
+  
 }
 
 /* photo show page*/
