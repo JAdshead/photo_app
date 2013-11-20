@@ -9,4 +9,12 @@ class Photo < ActiveRecord::Base
   belongs_to :album
   has_many :comments
 
+
+  def self.reproccess_all_images
+    Photo.all.each do |photo|
+      photo.image.recreate_versions!
+    end
+  end
 end
+
+

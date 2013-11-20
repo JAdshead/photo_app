@@ -12,7 +12,9 @@
 
 = @photo.description
 
-= image_tag @photo.image.photo_resize
+= link_to @photo.album do 
+  = image_tag @photo.image_url(:photo_resize)
+
 
 %br
 = link_to 'UP VOTE for this photo!', vote_up_photo_path(@photo), :method => :post
