@@ -21,24 +21,20 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  letter-spacing: 0.1em
-
-}
-
-p, a {
+  letter-spacing: 0.1em;
+  color: #424b51; 
   font-weight: 400;
+
 }
 
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.175em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
 }
 
-h1 {
-  font-size: 20px;
-}
 
 
 
@@ -148,7 +144,7 @@ h1 {
   background-color: #f2f6f7;
   float: left;
   margin-top: 70px;
-  padding: 0;
+  padding: 20px;
 }
 
 
@@ -165,22 +161,58 @@ h1 {
 
 .sidebar-content {
   padding: 0 35px;
+  font-weight: 400;
 }
 
+.sidebar-text {
+  margin-top: 4em;
+}
+
+.sidebar-text h1 {
+  margin-top: 2em;
+  font-size: 1.2em;
+}
+
+.sidebar-text span {
+  margin-top: 0;
+  font-size: 4em;
+  color: #657682;
+}
+
+.profile-picture {
+  margin: 0;
+  display: block;
+}
+
+.profile-picture h3 {
+  text-align: center;
+  display: block;
+  color: #9EADB8;
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.profile-picture img {
+  border-radius: 100%;
+  margin: 4em auto 2em;
+  display: block;
+  width: 60%;
+}
 
 /*** PROFILE GRID ***/
 
 .profile-grid-photo {
   width: 50%;
   height: 300px;
-  padding: 30px;
+  padding: 20px;
   float: left;
 }
 
 .profile-grid-photo img {
   display: block;
-  width: 516px;
+  width: 100%;
 }
+
 
 .profile-grid-form {
   background: white;
@@ -191,5 +223,8 @@ h1 {
   margin: 30px 0px 30px 30px;
 }
 
-
+/* letter-spacing: 0.19em;
+text-transform: uppercase;
+font-weight: 400;
+font-size: 1.05em;
 

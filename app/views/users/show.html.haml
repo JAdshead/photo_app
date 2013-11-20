@@ -11,16 +11,20 @@
         - photo = album.photos.plusminus_tally.order('plusminus_tally DESC').first
         = link_to album do
           = image_tag photo.image_url(:profile_grid)
+  .profile-grid-photo
+    Add album
 
 .sidebar-content-area
   .sidebar-content
-    = image_tag avatar_url(@user)
-    = @user.name
-    %br/
-    = @user.email
+    .profile-picture
+      = image_tag avatar_url(@user)
+      %h3= @user.name
     - if can? :create, Album
       = link_to 'Create Album', new_album_path(:user_id => @user)
     - if can? :update, User
       = link_to 'Edit Profile', edit_user_registration_path
-    %h4 Albums
-    %h1 #{@user.albums.count}
+    .sidebar-text
+      %h1 Albums
+      %span #{@user.albums.count}
+      %h1 Photos
+      %span #{@user.photos.count}
