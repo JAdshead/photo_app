@@ -23,7 +23,7 @@
             = link_to 'Sign up', new_user_registration_path
 
             = link_to 'Login', new_user_session_path
-            %a.search Search
+          %a.search Search
       .feature-content
         .logo
           = image_tag "/assets/logo.png"
@@ -45,7 +45,7 @@
               .background-page-avatar-picture
                 =link_to image_tag(avatar_url(photo.album.user)), photo.album.user
               = link_to(photo) do
-        
+  
                 %h1.background
                   = photo.title
                 %h1.background

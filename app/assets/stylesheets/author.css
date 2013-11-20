@@ -258,7 +258,7 @@ li.background {
 
 .profile-grid-photo {
   width: 50%;
-  height: auto;
+  height: 241px;
   width: 48%;
   margin: 1%;
   float: left;
@@ -271,10 +271,12 @@ li.background {
   padding: 0px;
   /*margin: 20px;*/
   height: 241px;
+
 }
 
 .profile-grid-photo img {
   /*display: block;*/
+  height: 241px;
   width: 100%;
 }
 
@@ -293,7 +295,6 @@ li.background {
 .error_message_searches {
   text-align: center;
 }
-
 
 /* letter-spacing: 0.19em;
 text-transform: uppercase;
