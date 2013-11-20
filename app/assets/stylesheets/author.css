@@ -191,5 +191,44 @@ h1 {
   margin: 30px 0px 30px 30px;
 }
 
+/*** Search Fade Input ***/
 
+.search {
+  cursor: pointer;
+}
+
+.close {
+
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; bottom: 0;
+  right: 0; left: 0;
+  display: none;
+  background:rgba(200,200,200,0.9);
+}
+
+.overlay input {
+  background:rgba(255,255,255,0.0);
+  padding: 20px;
+  font-size: 80px;
+  border: 0;
+  margin: 40px;
+
+}
+.overlay input:focus { outline: none; }
+
+.overlay .close {
+    position: absolute;
+    font-weight: 200;
+    top: 50px;
+    right: 100px;
+    font-size: 30px;
+}
 

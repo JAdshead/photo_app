@@ -7,4 +7,7 @@
   = f.text_field :title
   = f.label :description
   = f.text_field :description
+  .input-row
+    = f.label :tags
+    = f.text_field :tag_list, id: "photo_tags_list"
   = f.submit
