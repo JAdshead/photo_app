@@ -10,7 +10,7 @@
 
   def show
     @photo = Photo.new
-    @photos = @album.photos.plusminus_tally.order('plusminus_tally DESC').all
+    @photos = @album.photos.all
   end
 
   def new

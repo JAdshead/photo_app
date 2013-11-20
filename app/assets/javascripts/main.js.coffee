@@ -1,9 +1,10 @@
 
 $ ->
-
   
+  # tags js
   $('#photo_tags_list').select2({tags:[]})
 
+  # epic search feature
   $overlay = $('.overlay')
   $('.search').on 'click', =>
     if $overlay.is(':visible')
@@ -15,3 +16,6 @@ $ ->
 
   $('.close').on 'click', =>
     $overlay.fadeOut();
+
+  # show hide add photo form
+  $

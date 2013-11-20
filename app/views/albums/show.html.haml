@@ -1,33 +1,32 @@
 .grid-content-area
-  %h3 Add photo
-  %ul.errors
-    - @photo.errors.full_messages.each do |error|
-      %li= error
-  = form_for(@photo) do |f|
-    = hidden_field_tag :album_id, @album.id
-    = f.label :title
-    = f.text_field :title
-    = f.label :description
-    = f.text_field :description
-    = f.file_field :image
-    .input-row
-      = f.label :tags
-      = f.text_field :tag_list, id: "photo_tags_list"
-    = f.submit
+  
+  - if can? :create, Photo
+    %h3 Add photo
+    .add-photo-form
+      %ul.errors
+        - @photo.errors.full_messages.each do |error|
+          %li= error
+      = form_for(@photo) do |f|
+        = hidden_field_tag :album_id, @album.id
+        = f.label :title
+        = f.text_field :title
+        = f.label :description
+        = f.text_field :description
+        = f.file_field :image
+        .input-row
+          = f.label :tags
+          = f.text_field :tag_list, id: "photo_tags_list"
+        = f.submit
 
-  %h3 Album Photos
   - @photos.each do |photo|
-    %ul
-      %li
-        = link_to image_tag(photo.image_url(:thumb), :width => "400px"), photo_path(photo)
-      %li
-        = photo.title
-      %li
-        = photo.description
-      %li
-        = photo.tag_list
-    - if can? :destroy, photo
-      = link_to "Remove photo", photo_path(photo), method: :delete
+    .profile-grid-photo    
+      = link_to image_tag(photo.image_url(:profile_grid)), photo_path(photo)
+      / = photo.title
+      / = photo.description
+      / = photo.tag_list
+      / - if can? :destroy, photo
+      /   = link_to "Remove photo", photo_path(photo), method: :delete
+
 .sidebar-content-area
   .sidebar-content
     .profile-picture
@@ -44,8 +43,5 @@
       = link_to "Edit Album", edit_album_path(@album)
       \|
       = link_to "Delete Album", album_path(@album), method: :delete
-      \|
-    / = link_to "Back to user profile", user_path(@album.user_id)
-
 
 
