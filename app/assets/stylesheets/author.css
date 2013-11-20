@@ -23,6 +23,9 @@
   color: red;
 }
 
+a {
+  text-decoration: none;
+}
 
 body {
   font-family: 'Lato', sans-serif;
@@ -339,4 +342,20 @@ font-size: 1.05em;
     font-size: 30px;
 }
 
+/* User index */
+.user-container {
+  margin-top: 3em;
+}
+.user-container ul {
+  list-style: none;
+}
+.user-container a {
+  text-decoration: none;
+  color: ;
+}
+
+/* photo show page*/
+.photo-score {
+  text-align: center;
+}
 

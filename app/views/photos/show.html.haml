@@ -1,22 +1,6 @@
-
 .grid-content-area
-  %h3= @photo.title
-  - if !!@photo.votes
-    %h4
-      Number of Up Votes =
-      = @photo.votes_for
-
-    %h4
-      Number of Down Votes =
-      = @photo.votes_against
-
-  %p this is the photo
-
-  = @photo.description
-
   = link_to @photo.album do 
     = image_tag @photo.image_url(:photo_resize)
-
 
   - if can? :vote_up, :vote_down, @photo
     %br
@@ -28,6 +12,9 @@
       = link_to 'UP VOTE for this photo!', vote_up_photo_path(@photo), :method => :post
       \|
       = link_to 'DOWN VOTE for this photo!', vote_down_photo_path(@photo), :method => :post
+
+  - if can? :edit, @photo
+    = link_to "Edit photo", edit_photo_path(@photo)
 
 
   - if can? :create, @comment
@@ -43,7 +30,6 @@
       %br/
       = f.submit
 
-
   %p Comments
   %ul
     - @photo.comments.each do |comment|
@@ -54,23 +40,22 @@
         - if can? :destroy, comment
           = link_to 'Delete Comment', comment, method: :delete
 
-  - if can? :edit, @photo
-    = link_to "edit photo", edit_photo_path(@photo)
-
 .sidebar-content-area
   .sidebar-content
     .profile-picture
-      = image_tag avatar_url(@user)
-      %h3= @user.name
-    - if can? :create, Album
-      = link_to 'Create Album', new_album_path(:user_id => @user)
-    - if can? :update, User
-      = link_to 'Edit Profile', edit_user_registration_path
+      =image_tag avatar_url(@photo.album.user)
+      %h3= @photo.album.user.name
+
     .sidebar-text
-      %h1 Albums
-      %span #{@user.albums.count}
-      %h1 Photos
-      %span #{@user.photos.count}
+      %h1 Title
+      %p= @photo.title
+      %h1 Description
+      %p= @photo.description
+      - if !!@photo.votes
+        %h1
+          Score
+        %span
+          = (@photo.votes_for - @photo.votes_against)
 
 
 
