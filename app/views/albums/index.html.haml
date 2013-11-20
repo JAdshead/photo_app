@@ -10,7 +10,7 @@
       = album.description
     %li
       = album.user_id
-    
+
       - if album.photos.empty?
         = link_to album do 
           = image_tag "./album_no_photo"

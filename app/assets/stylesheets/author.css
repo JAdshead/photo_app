@@ -43,10 +43,10 @@ h1, h2, h3, h4, h5, h6 {
 .user-nav {
   height: 70px;
   background: #363e43;
-  padding: auto 0; 
+  padding: auto 0;
   position: fixed;
   z-index: 2;
-  width: 100%; 
+  width: 100%;
   top: 0;
 
 }
@@ -135,6 +135,9 @@ h1, h2, h3, h4, h5, h6 {
   margin: auto;
 }
 
+.pagination {
+  text-align: center;
+}
 
 /*** GRID SECTION **/
 
@@ -176,7 +179,7 @@ h1, h2, h3, h4, h5, h6 {
 .sidebar-text span {
   margin-top: 0;
   font-size: 4em;
-  color: #657682;
+  color: #94A9B1;
 }
 
 .profile-picture {
@@ -223,8 +226,56 @@ h1, h2, h3, h4, h5, h6 {
   margin: 30px 0px 30px 30px;
 }
 
+
 /* letter-spacing: 0.19em;
 text-transform: uppercase;
 font-weight: 400;
 font-size: 1.05em;
+=======
+/*** Search Fade Input ***/
+
+.search {
+  cursor: pointer;
+}
+
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; bottom: 0;
+  right: 0; left: 0;
+  display: none;
+  background:rgba(200,200,200,0.95);
+}
+
+.overlay p {
+  font-size: 2em;
+  text-align: center;
+}
+
+.overlay input {
+  color: white;
+  background:rgba(255,255,255,0.0);
+  padding: 20px;
+  font-size: 80px;
+  border: 0;
+  margin: 40px;
+}
+.overlay input:focus { outline: none; }
+
+.overlay .close {
+    position: absolute;
+    font-weight: 200;
+    top: 50px;
+    right: 100px;
+    font-size: 30px;
+}
+
 

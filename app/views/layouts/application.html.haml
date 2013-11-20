@@ -15,7 +15,7 @@
   
     .user-nav.cf
       .nav-logo
-        = image_tag "/assets/logo.png"
+        = link_to image_tag("/assets/logo.png"), root_path
       .nav-links
         - if user_signed_in?
           = link_to "Logged in as #{current_user.email}", current_user 
@@ -23,6 +23,13 @@
         - else
           = link_to 'Sign up', new_user_registration_path
           = link_to 'Login', new_user_session_path
+        %span.search  Search
+        .overlay
+          %span.close Close
+          = form_tag searches_path do
+            = text_field_tag :query, nil, :class => 'search-input', :placeholder => 'search...',:autocomplete =>"off" 
+            / = submit_tag "Search"
+          %p Press Enter to search
     .yield
       = yield 
 
