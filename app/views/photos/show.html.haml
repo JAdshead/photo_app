@@ -1,61 +1,61 @@
-%h3= @photo.title
-- if !!@photo.votes
-  %h4
-    Number of Up Votes =
-    = @photo.votes_for
+.grid-content-area
+  = link_to @photo.album do 
+    = image_tag @photo.image_url(:photo_resize)
 
-  %h4
-    Number of Down Votes =
-    = @photo.votes_against
+  - if can? :vote_up, :vote_down, @photo
+    %br
+    - if current_user.voted_against?(@photo)
+      %p You have voted against this photo
+    - elsif current_user.voted_for?(@photo)
+      %p You have voted for this photo
+    - else current_user.voted_against?(@photo)
+      = link_to 'UP VOTE for this photo!', vote_up_photo_path(@photo), :method => :post
+      \|
+      = link_to 'DOWN VOTE for this photo!', vote_down_photo_path(@photo), :method => :post
 
-%p this is the photo
-
-= @photo.description
-
-= link_to @photo.album do 
-  = image_tag @photo.image_url(:photo_resize)
-
-
-- if can? :vote_up, :vote_down, @photo
-  %br
-  - if current_user.voted_against?(@photo)
-    %p You have voted against this photo
-  - elsif current_user.voted_for?(@photo)
-    %p You have voted for this photo
-  - else current_user.voted_against?(@photo)
-    = link_to 'UP VOTE for this photo!', vote_up_photo_path(@photo), :method => :post
-    \|
-    = link_to 'DOWN VOTE for this photo!', vote_down_photo_path(@photo), :method => :post
+  - if can? :edit, @photo
+    = link_to "Edit photo", edit_photo_path(@photo)
 
 
-- if can? :create, @comment
-  %h3 Form to Add a Comment
-  %ul.errors
-    - @comment.errors.full_messages.each do |error|
-      %li= error
+  - if can? :create, @comment
+    %h3 Form to Add a Comment
+    %ul.errors
+      - @comment.errors.full_messages.each do |error|
+        %li= error
 
-  = form_for(@comment) do |f|
-    = hidden_field_tag :photo_id, @photo.id
-    = f.label :description
-    = f.text_field :description
-    %br/
-    = f.submit
+    = form_for(@comment) do |f|
+      = hidden_field_tag :photo_id, @photo.id
+      = f.label :description
+      = f.text_field :description
+      %br/
+      = f.submit
 
+  %p Comments
+  %ul
+    - @photo.comments.each do |comment|
+      %li
+        = comment.description
+      %li
+        = comment.user.email
+        - if can? :destroy, comment
+          = link_to 'Delete Comment', comment, method: :delete
 
-%p Comments
-%ul
-  - @photo.comments.each do |comment|
-    %li
-      = comment.description
-    %li
-      = comment.user.email
-      - if can? :destroy, comment
-        = link_to 'Delete Comment', comment, method: :delete
+.sidebar-content-area
+  .sidebar-content
+    .profile-picture
+      =image_tag avatar_url(@photo.album.user)
+      %h3= @photo.album.user.name
 
-- if can? :edit, @photo
-  = link_to "edit photo", edit_photo_path(@photo)
-
-
+    .sidebar-text
+      %h1 Title
+      %p= @photo.title
+      %h1 Description
+      %p= @photo.description
+      - if !!@photo.votes
+        %h1
+          Score
+        %span
+          = (@photo.votes_for - @photo.votes_against)
 
 
 

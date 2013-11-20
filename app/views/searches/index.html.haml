@@ -1,5 +1,11 @@
-%h2 Search results
+
+.search-grid.header-margin
 - @photos.each do |photo|
-  %li
-    = link_to image_tag(photo.image.thumb), photo
-    = photo.tag_list
+  .search-photo
+    = link_to photo do
+      = image_tag(photo.image.search_grid)
+
+.error_message_searches
+  = @error_message
+
+

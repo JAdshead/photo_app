@@ -19,7 +19,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :photo_resize do
-    process :resize_to_fit => [800, 800]
+    process :resize_to_fit => [800, 600]
   end
 
   version :home_grid do 
@@ -28,6 +28,10 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   version :profile_grid do 
     process :resize_to_fill => [530, 240]
+  end
+
+  version :search_grid do 
+    process :resize_to_fill => [358, 250]
   end
   
   version :avatar_resize do
