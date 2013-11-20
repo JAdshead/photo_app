@@ -51,13 +51,5 @@ class User < ActiveRecord::Base
     end
   end
 
-  def get_albums_with_photos
-    albums = []
 
-    self.albums.each do |album|
-      albums << album unless album.photos.empty?
-    end
-
-    return albums
-  end
 end

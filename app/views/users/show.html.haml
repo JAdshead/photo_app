@@ -5,7 +5,8 @@
   - @user.albums.each do |album|
     .profile-grid-photo
       - if album.photos.empty?
-        = link_to album, "TEST"
+        = link_to album do 
+          = image_tag "./album_no_photo"
       - else
         - photo = album.photos.first
         = link_to album do
