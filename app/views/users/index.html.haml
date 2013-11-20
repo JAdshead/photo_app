@@ -1,12 +1,14 @@
-%h3 All Users
-%ul
-  - @users.each do |user|
-    = image_tag avatar_url(user)
-    %li
-      Email : #{user.email} 
-    %li
-      Role : #{user.role}
-    %li
-      = link_to user.name, user
-    %br
+.user-container
+  %h3 All Users
+
+  %ul
+    - @users.each do |user|
+      = image_tag avatar_url(user)
+      %li
+        Email : #{user.email} 
+      %li
+        Role : #{user.role}
+      %li
+        = link_to user.name, user
+      %br
 

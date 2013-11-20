@@ -24,12 +24,20 @@
 /** FONT STUFF **/
 
 
+.errors {
+  color: red;
+}
+
+a {
+  text-decoration: none;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   letter-spacing: 0.1em;
-  color: #424b51; 
+  color: #424b51;
   font-weight: 400;
-
+  font-size: 16px;
 }
 
 
@@ -58,9 +66,31 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-links {
   float: right;
-  padding-top: 24px;
+  padding-top: 20px;
   opacity: 1;
   margin-right: 50px;
+}
+
+.nav-links-home {
+  float: right;
+  opacity: 1;
+  margin-right: 50px;
+  width: 100%;
+  text-align: right;
+}
+
+.nav-links-home img {
+  width: 12%;
+  border-radius: 100%;
+}
+
+.nav-links img {
+  width: 17%;
+  border-radius: 100%;
+}
+
+.not-signed-in-nav {
+  padding-top: 4px;
 }
 
 .nav-links a {
@@ -119,17 +149,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tagline {
+  font-size: 0.6em;
   margin-top: 55px;
 }
 
 .grid-container-home {
-  margin-top: 20px
+  margin-top: 20px;
+  padding: 0 1.6666665%;
 }
 
 .home-grid-photo {
-  width: 33.3333%;
+  width: 30%;
   height: 300px;
-  margin-top: 20px;
+  margin: 1.6666665%;
   padding: 0;
   float: left;
 }
@@ -151,7 +183,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   margin: auto;
-  padding: 20px;
+  padding: 0;
 }
 
 li.background {
@@ -176,7 +208,7 @@ li.background {
 .sidebar-content-area {
   height: 100%;
   width: 20%;
-  margin-top: 70px;
+  margin-top: 3em;
   padding: 0;
   position: fixed;
   right: 0;
@@ -188,7 +220,7 @@ li.background {
 }
 
 .sidebar-text {
-  margin-top: 4em;
+  margin-top: 3em;
 }
 
 .sidebar-text h1 {
@@ -198,8 +230,9 @@ li.background {
 
 .sidebar-text span {
   margin-top: 0;
-  font-size: 4em;
+  font-size: 3em;
   color: #94A9B1;
+  margin-left: 45%;
 }
 
 .profile-picture {
@@ -224,15 +257,30 @@ li.background {
 
 /*** PROFILE GRID ***/
 
+.placeholder-album {
+  height: 241px;
+}
+
 .profile-grid-photo {
   width: 50%;
-  height: 300px;
-  padding: 20px;
+  height: 241px;
+  width: 48%;
+  margin: 1%;
   float: left;
 }
 
+.profile-grid-photo.add{
+  background: url(/assets/new-album.png);
+  background-size: 48% auto;
+  width: 48%;
+  padding: 0px;
+  height: 240px;
+
+}
+
 .profile-grid-photo img {
-  display: block;
+  /*display: block;*/
+  height: 240px;
   width: 100%;
 }
 
@@ -246,6 +294,11 @@ li.background {
   margin: 30px 0px 30px 30px;
 }
 
+/*** SEARCHES ***/
+
+.error_message_searches {
+  text-align: center;
+}
 
 /* letter-spacing: 0.19em;
 text-transform: uppercase;
@@ -258,6 +311,9 @@ font-size: 1.05em;
   cursor: pointer;
 }
 
+::-webkit-input-placeholder {
+    color:    #d5d8d8;
+}
 
 .close {
   position: absolute;
@@ -272,7 +328,7 @@ font-size: 1.05em;
   top: 0; bottom: 0;
   right: 0; left: 0;
   display: none;
-  background:rgba(200,200,200,0.95);
+  background:rgba(255,255,255,0.95);
 }
 
 .overlay p {
@@ -281,10 +337,10 @@ font-size: 1.05em;
 }
 
 .overlay input {
-  color: white;
-  background:rgba(255,255,255,0.0);
+  color: #424b51;
+  background: none;
   padding: 20px;
-  font-size: 80px;
+  font-size: 8em;
   border: 0;
   margin: 40px;
 }
@@ -298,4 +354,69 @@ font-size: 1.05em;
     font-size: 30px;
 }
 
+/* User index */
+.user-container {
+  margin-top: 3em;
+}
+.user-container ul {
+  list-style: none;
+}
+.user-container a {
+  text-decoration: none;
+  color: ;
+}
+
+/* photo show page*/
+.photo-score {
+  text-align: center;
+}
+
+
+/** SEARCH **/
+
+.search-grid {
+  width: 100%;
+}
+
+.search-photo {
+  width: 25%;
+  margin: 0;
+  display: block;
+  float: left;
+}
+
+.search-photo img {
+  width: 100%;
+  height: 250px;
+}
+/* Home hover */
+.background-home-grid-photo {
+  display: none
+
+}
+
+.background-home-grid-photo a {
+  color: white;
+}
+
+.background-home-grid-photo h1 {
+  font-size: 1.5em;
+  margin: 0;
+  padding-top: 1em;
+}
+
+.background-page-avatar-picture {
+  margin: 0 auto;
+  padding-top: 1.5em;
+}
+
+.background-page-avatar-picture img {
+  border-radius: 100%;
+  width: 20%;
+}
+
+.score-link  {
+  font-weight: 100;
+  font-size: 2em;
+}
 
