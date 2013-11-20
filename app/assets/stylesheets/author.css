@@ -203,7 +203,7 @@ li.background {
 .sidebar-content-area {
   height: 100%;
   width: 20%;
-  margin-top: 70px;
+  margin-top: 3em;
   padding: 0;
   position: fixed;
   right: 0;
@@ -215,7 +215,7 @@ li.background {
 }
 
 .sidebar-text {
-  margin-top: 4em;
+  margin-top: 3em;
 }
 
 .sidebar-text h1 {
@@ -225,8 +225,9 @@ li.background {
 
 .sidebar-text span {
   margin-top: 0;
-  font-size: 4em;
+  font-size: 3em;
   color: #94A9B1;
+  margin-left: 45%;
 }
 
 .profile-picture {
@@ -358,4 +359,38 @@ font-size: 1.05em;
 .photo-score {
   text-align: center;
 }
+
+/* Home hover */
+.background-home-grid-photo {
+  display: none
+
+}
+
+.background-home-grid-photo a {
+  color: white;
+}
+
+.background-home-grid-photo h1 {
+  font-size: 1.5em;
+  margin: 0;
+  padding-top: 1em;
+}
+
+.background-page-avatar-picture {
+  margin: 0 auto;
+  padding-top: 1.5em;
+}
+
+.background-page-avatar-picture img {
+  border-radius: 100%;
+  width: 20%;
+}
+
+.score-link  {
+  font-weight: 100;
+  font-size: 2em;
+}
+
+
+
 

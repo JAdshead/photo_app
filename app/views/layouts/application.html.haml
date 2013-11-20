@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title PhotoApp
+    %title PHTGRPHR
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lato:300,400,700", :rel => "stylesheet", :type => "text/css"
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Raleway:400,600,300", :rel => "stylesheet", :type => "text/css"
     = stylesheet_link_tag    "application", :media => "all"
@@ -32,10 +32,6 @@
             = text_field_tag :query, nil, :class => 'search-input', :placeholder => 'search...',:autocomplete =>"off" 
     .yield
       = yield 
-
-/ to go on login form
-/ = link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2)
-/ = link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
 
 
 
