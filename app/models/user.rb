@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
 
   has_many :albums
   has_many :comments
-  has_many :photos, through: :album
+  has_many :photos, through: :albums
   has_many :authorizations
 
   acts_as_voter

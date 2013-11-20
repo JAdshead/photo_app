@@ -119,14 +119,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .grid-container-home {
-  margin-top: 20px
+  margin-top: 20px;
+  padding: 0 1.6666665%;
 }
 
 .home-grid-photo {
-  width: 33.3333%;
+  width: 30%;
   height: 300px;
-  margin-top: 20px;
-  padding: 0;
+  margin: 1.6666665%;
+  padding: 0; 
   float: left;
 }
 
@@ -147,7 +148,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   margin: auto;
-  padding: 20px;
+  padding: 0;
 }
 
 li.background {
@@ -220,6 +221,10 @@ li.background {
 
 /*** PROFILE GRID ***/
 
+.placeholder-album {
+  height: 241px;
+}
+
 .profile-grid-photo {
   width: 50%;
   height: auto;
@@ -234,7 +239,7 @@ li.background {
   width: 48%;
   padding: 0px;
   /*margin: 20px;*/
-  /*height: 240px;*/
+  height: 241px;
 }
 
 .profile-grid-photo img {
