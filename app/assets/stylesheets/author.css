@@ -269,7 +269,7 @@ li.background {
   width: 48%;
   padding: 0px;
   /*margin: 20px;*/
-  height: 241px;
+  height: 240px;
 }
 
 .profile-grid-photo img {
@@ -359,3 +359,21 @@ font-size: 1.05em;
   text-align: center;
 }
 
+
+/** SEARCH **/
+
+.search-grid {
+  width: 100%;
+}
+
+.search-photo {
+  width: 25%;
+  margin: 0;
+  display: block;
+  float: left;
+}
+
+.search-photo img {
+  width: 100%;
+  height: 250px;
+}
