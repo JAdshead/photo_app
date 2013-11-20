@@ -126,6 +126,9 @@ GEM
     json (1.8.1)
     jwt (0.1.8)
       multi_json (>= 1.5)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     koala (1.6.0)
       addressable (~> 2.2)
       faraday (~> 0.8)
@@ -288,6 +291,7 @@ DEPENDENCIES
   guard-rspec
   haml-rails
   jquery-rails
+  kaminari
   koala
   launchy
   meta_request
