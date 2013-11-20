@@ -18,17 +18,18 @@
         = link_to image_tag("/assets/logo.png"), root_path
       .nav-links
         - if user_signed_in?
-          = link_to "Logged in as #{current_user.email}", current_user 
+          = link_to current_user do
+            = image_tag avatar_url(current_user)
           = link_to 'Logout',  destroy_user_session_path, method: :delete
         - else
-          = link_to 'Sign up', new_user_registration_path
-          = link_to 'Login', new_user_session_path
-        %span.search  Search
+          .not-signed-in-nav
+            = link_to 'Sign up', new_user_registration_path
+            = link_to 'Login', new_user_session_path
+            %a.search  Search
         .overlay
           %span.close Close
           = form_tag searches_path do
             = text_field_tag :query, nil, :class => 'search-input', :placeholder => 'search...',:autocomplete =>"off" 
-          
     .yield
       = yield 
 

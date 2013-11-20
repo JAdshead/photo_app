@@ -58,9 +58,31 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-links {
   float: right;
-  padding-top: 24px;
+  padding-top: 20px;
   opacity: 1;
   margin-right: 50px;
+}
+
+.nav-links-home {
+  float: right;
+  opacity: 1;
+  margin-right: 50px;
+  width: 100%;
+  text-align: right;
+}
+
+.nav-links-home img {
+  width: 12%;
+  border-radius: 100%;
+}
+
+.nav-links img {
+  width: 17%;
+  border-radius: 100%;
+}
+
+.not-signed-in-nav {
+  padding-top: 4px;
 }
 
 .nav-links a {
