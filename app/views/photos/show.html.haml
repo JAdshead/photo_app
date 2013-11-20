@@ -54,6 +54,7 @@
 
 - if can? :edit, @photo
   = link_to "edit photo", edit_photo_path(@photo)
+  = link_to "remove photo", photo_path(@photo), method: :Delete
 
 
 
