@@ -52,15 +52,3 @@
             %li.background PHOTO TITLE
             = link_to photo.title, photo
 
-
-        .tagline
-          %h1 Creating beautiful albums of your favourite photos.
-    .pagination
-      = will_paginate @photos
-      .grid-container-home.cf
-        - @photos.each do |photo|
-          .home-grid-photo
-            = link_to photo do
-              = image_tag photo.image_url(:home_grid)
-
-
