@@ -15,16 +15,25 @@ load_and_authorize_resource
 
   def create
     @photo.album_id = params[:album_id]
-    @photo.save
-    redirect_to @photo.album
+    if @photo.save
+      redirect_to @photo.album
+    else
+      @album = Album.find params[:album_id]
+      @photos = @album.photos.plusminus_tally.order('plusminus_tally DESC').all
+      render  :template => "albums/show"
+    end
   end
 
   def edit
   end
 
   def update
-    photo.update_attributes params[:photo]
-    redirect_to photo
+    @photo = Photo.find params[:id]
+    if @photo.update_attributes params[:photo]
+      redirect_to @photo
+    else
+      render action: "edit"
+    end
   end
 
   def destroy

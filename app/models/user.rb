@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
 
   has_many :albums
   has_many :comments
-  has_many :photos, through: :album
+  has_many :photos, through: :albums
   has_many :providers
 
   acts_as_voter
@@ -47,6 +47,9 @@ class User < ActiveRecord::Base
   #   authorization.user
   # end
 
+  def role?(r)
+    self.role == r.to_s
+  end
 
   def self.from_omniauth(auth)
     if user = User.find_by_email(auth.info.email)
@@ -70,7 +73,5 @@ class User < ActiveRecord::Base
     end
   end
 
-  def role?(r)
-    self.role == r.to_s
-  end
+
 end
