@@ -14,13 +14,13 @@ user.skip_confirmation!
 user.save
 
 
-user2=User.new(:email=>'bob@user.com',:name=>'Bob Bobby',:password=>'password', :role=>'user')
-user.skip_confirmation!
-user.save
+# user2=User.new(:email=>'bob@user.com',:name=>'Bob Bobby',:password=>'password', :role=>'user')
+# user.skip_confirmation!
+# user.save
 
-album1=Album.create(title: Faker::Lorem.word, description: Faker::Lorem.paragraph)
-album1.user = user2
-album1.save
+# album1=Album.create(title: Faker::Lorem.word, description: Faker::Lorem.paragraph)
+# album1.user = user2
+# album1.save
 
 # photo1= Photo.create(title: Faker::Lorem.word, description: Faker::Lorem.paragraph)
 # photo1.album = album1
