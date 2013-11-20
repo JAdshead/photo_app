@@ -129,7 +129,7 @@ h1, h2, h3, h4, h5, h6 {
   float: left;
 }
 
-.home-grid-photo img{
+.home-grid-photo img {
   display: block;
   width: 430px;
   margin: auto;
@@ -137,6 +137,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .pagination {
   text-align: center;
+}
+
+.background-home-grid-photo {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 20px;
+}
+
+li.background {
+  list-style: none;
+
 }
 
 /*** GRID SECTION **/
