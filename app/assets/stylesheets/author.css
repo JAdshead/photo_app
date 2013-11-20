@@ -47,10 +47,10 @@ h1 {
 .user-nav {
   height: 70px;
   background: #363e43;
-  padding: auto 0; 
+  padding: auto 0;
   position: fixed;
   z-index: 2;
-  width: 100%; 
+  width: 100%;
   top: 0;
 
 }
@@ -139,6 +139,9 @@ h1 {
   margin: auto;
 }
 
+.pagination {
+  text-align: center;
+}
 
 /*** GRID SECTION **/
 
@@ -179,7 +182,7 @@ h1 {
 
 .profile-grid-photo img {
   display: block;
-  width: 516px;
+  width: 100%;
 }
 
 .profile-grid-form {
@@ -197,8 +200,8 @@ h1 {
   cursor: pointer;
 }
 
-.close {
 
+.close {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -211,16 +214,21 @@ h1 {
   top: 0; bottom: 0;
   right: 0; left: 0;
   display: none;
-  background:rgba(200,200,200,0.9);
+  background:rgba(200,200,200,0.95);
+}
+
+.overlay p {
+  font-size: 2em;
+  text-align: center;
 }
 
 .overlay input {
+  color: white;
   background:rgba(255,255,255,0.0);
   padding: 20px;
   font-size: 80px;
   border: 0;
   margin: 40px;
-
 }
 .overlay input:focus { outline: none; }
 

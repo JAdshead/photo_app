@@ -21,6 +21,13 @@
         - else
           = link_to 'Sign up', new_user_registration_path
           = link_to 'Login', new_user_session_path
+        %span.search  Search
+        .overlay
+          %span.close Close
+          = form_tag searches_path do
+            = text_field_tag :query, nil, :class => 'search-input', :placeholder => 'search...',:autocomplete =>"off" 
+            / = submit_tag "Search"
+          %p Press Enter to search
     .yield
       = yield 
 
