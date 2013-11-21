@@ -520,7 +520,7 @@ input {
 
 .user-form {
     background-color: white;
-    margin: 8em auto 8em auto;
+    margin: 7em auto;
     text-align: center;
     width: 29em;
     border-radius: 3px;
@@ -542,7 +542,7 @@ input {
 }
 
 .form-content {
-  padding: 2em 0;
+  padding: 1em 0;
 }
 
 .form-content .remember-check-box {
