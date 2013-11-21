@@ -577,4 +577,12 @@ p.add-album-plus {
   padding-bottom: -1em; 
 }
 
+#error_explanation h2 {
+  display: none;
+}
+#error_explanation ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
 
