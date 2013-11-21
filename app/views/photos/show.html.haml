@@ -11,16 +11,18 @@
       - elsif current_user.voted_for?(@photo)
         %p You have voted for this photo
       - else current_user.voted_against?(@photo)
-        = link_to 'UP VOTE for this photo!', vote_up_photo_path(@photo), :method => :post
+        = link_to 'VOTE UP', vote_up_photo_path(@photo), :method => :post
         \|
-        = link_to 'DOWN VOTE for this photo!', vote_down_photo_path(@photo), :method => :post
-
+        = link_to 'DOWN VOTE', vote_down_photo_path(@photo), :method => :post
+        %br
+    = link_to 'Share on Facebook', "https://www.facebook.com/sharer/sharer.php?u=" + photo_path(@photo)
+    %br
     - if can? :edit, @photo
       = link_to "Edit photo", edit_photo_path(@photo)
       \|  
       = link_to "Remove photo", photo_path(@photo), method: :delete
       \|
-    = link_to 'Share on Facebook', "https://www.facebook.com/sharer/sharer.php?u=" + photo_path(@photo)
+    
     .comments-form-content
       - if can? :create, @comment
         %h3 Form to Add a Comment
