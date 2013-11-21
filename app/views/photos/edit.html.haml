@@ -1,13 +1,30 @@
-%h3 Form to Edit a Photo
-%ul.errors
-  - @photo.errors.full_messages.each do |error|
-    %li= error
-= form_for(@photo) do |f|
-  = f.label :title
-  = f.text_field :title
-  = f.label :description
-  = f.text_field :description
-  .input-row
-    = f.label :tags
-    = f.text_field :tag_list, id: "photo_tags_list"
-  = f.submit
+.grid-content-area
+  %h3 Form to Edit a Photo
+  %ul.errors
+    - @photo.errors.full_messages.each do |error|
+      %li= error
+  = form_for(@photo) do |f|
+    = f.label :title
+    = f.text_field :title
+    = f.label :description
+    = f.text_field :description
+    .input-row
+      = f.label :tags
+      = f.text_field :tag_list, id: "photo_tags_list"
+    = f.submit
+.sidebar-content-area
+  .sidebar-content
+    .profile-picture
+      =image_tag avatar_url(@photo.album.user)
+      %h3= @photo.album.user.name
+
+    .sidebar-text
+      %h1 Title
+      %p= @photo.title
+      %h1 Description
+      %p= @photo.description
+      - if !!@photo.votes
+        %h1
+          Score
+        %span
+          = (@photo.votes_for - @photo.votes_against)
