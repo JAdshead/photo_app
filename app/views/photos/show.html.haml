@@ -4,7 +4,6 @@
     = link_to @photo.album do
       = image_tag @photo.image_url(:photo_resize)
 
-  .comments-form
     - if can? :vote_up, :vote_down, @photo
       %br
       - if current_user.voted_against?(@photo)
@@ -23,20 +22,9 @@
       = link_to "Remove photo", photo_path(@photo), method: :delete
       \|
 
+
     = link_to 'Share on Facebook', "https://www.facebook.com/sharer/sharer.php?u=http:\/photo-app-wdi-group-3.herokuapp.com" + photo_path(@photo)
 
-    .comments-form-content
-      - if can? :create, @comment
-        %h3 Form to Add a Comment
-        %ul.errors
-          - @comment.errors.full_messages.each do |error|
-            %li= error
-        = form_for(@comment) do |f|
-          = hidden_field_tag :photo_id, @photo.id
-          = f.text_field :description, placeholder: "Comment"
-          %br/
-          .comments-form-button
-            = f.submit
 
   - @photo.comments.order('created_at DESC').each do |comment|
     .comments-form
