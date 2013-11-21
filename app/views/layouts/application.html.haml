@@ -5,13 +5,10 @@
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lato:300,400,700", :rel => "stylesheet", :type => "text/css"
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Raleway:400,600,300", :rel => "stylesheet", :type => "text/css"
     = stylesheet_link_tag    "application", :media => "all"
-    = stylesheet_link_tag "normalize", :media => "all"
-    = stylesheet_link_tag    "main", :media => "all"
-    = stylesheet_link_tag    "author", :media => "all"
     = javascript_include_tag "application"
     %script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
     = csrf_meta_tags
-  %body
+  %body7
   
     .user-nav.cf
       .nav-logo
@@ -22,15 +19,16 @@
             = image_tag avatar_url(current_user)
           = link_to 'Logout',  destroy_user_session_path, method: :delete
         - else
-          .not-signed-in-nav
-            = link_to 'Sign up', new_user_registration_path
-            = link_to 'Login', new_user_session_path
+          / .not-signed-in-nav
+          = link_to 'Sign up', new_user_registration_path
+          = link_to 'Login', new_user_session_path
         %a.search  Search
         .overlay
-          %span.close Close
+          %span.close X
           = form_tag searches_path do
             = text_field_tag :query, nil, :class => 'search-input', :placeholder => 'search...',:autocomplete =>"off" 
-          
+    = notice
+    = alert    
     .yield
       = yield 
 

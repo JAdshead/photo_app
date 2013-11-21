@@ -5,9 +5,6 @@
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lato:300,400,700", :rel => "stylesheet", :type => "text/css"
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Raleway:400,600,300", :rel => "stylesheet", :type => "text/css"
     = stylesheet_link_tag    "application", :media => "all"
-    = stylesheet_link_tag "normalize", :media => "all"
-    = stylesheet_link_tag    "main", :media => "all"
-    = stylesheet_link_tag    "author", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
 
@@ -29,13 +26,14 @@
           = image_tag "/assets/logo.png"
 
         .overlay
-          %span.close Close
+          %span.close X
           = form_tag searches_path do
             = text_field_tag :query, nil, :class => 'search-input', :placeholder => 'search...',:autocomplete =>"off"
             / = submit_tag "Search"
         .tagline
           %h1 Creating beautiful albums of your favourite photos.
-
+      = notice
+      = alert  
     .pagination
       .grid-container-home.cf
         - @photos.each do |photo|
