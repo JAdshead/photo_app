@@ -1,5 +1,5 @@
 .grid-content-area
-  = link_to @photo.album do 
+  = link_to @photo.album do
     = image_tag @photo.image_url(:photo_resize)
 
   - if can? :vote_up, :vote_down, @photo
@@ -29,6 +29,9 @@
       = f.text_field :description
       %br/
       = f.submit
+
+  %p
+    = link_to 'Share on Facebook', "https://www.facebook.com/sharer/sharer.php?u=" + photo_path(@photo)
 
   %p Comments
   %ul
