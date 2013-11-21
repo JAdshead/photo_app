@@ -1,13 +1,14 @@
 
 <div class="user-form">
   <div class="form-content">
+
     <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
       <%= devise_error_messages! %>
 
-      <div><%= f.label :name %><br />
-      <%= f.text_field :name, :autofocus => true %></div>
+      <div>
+      <%= f.text_field :name, :autofocus => true, placeholder: "Name" %></div>
 
       <div><%= f.label :avatar %><br />
       <%= f.file_field :avatar %></div>
@@ -35,12 +36,12 @@
         </div>
       <% end %>
 
-      <div><%= f.submit "Update" %></div>
+      <div><%= f.submit "Update",  class: "form-button" %></div>
     <% end %>
 
     <h3>Cancel my account</h3>
 
-    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+    <p><%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
 
     <%= link_to "Back", :back %>
 
