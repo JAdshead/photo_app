@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_url , alert: "You can't access this page"
   end
 
+  
   # rescue_from  ThumbsUp::AccessDenied do |exception|
   #   redirect_to root_url , alert: "Your vote has been already cast"
   # end

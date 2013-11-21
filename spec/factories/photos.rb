@@ -1,7 +1,10 @@
+include ActionDispatch::TestProcess
+
 FactoryGirl.define do
   factory :photo do
     title { Faker::Name.first_name }
     description { Faker::Lorem.sentence }
+    image { fixture_file_upload('/images/placeholder.jpg', 'image/jpg') }
 
     user
     album

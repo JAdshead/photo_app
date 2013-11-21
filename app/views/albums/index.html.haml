@@ -1,23 +1,24 @@
-%h3 Albums Page
+.album-form-grid
+  %h3 Albums Page
 
-= link_to "Create new album", new_album_path
+  = link_to "Create new album", new_album_path
 
-- @albums.each do |album|
-  %ul
-    %li
-      %h4= album.title
-    %li
-      = album.description
-    %li
-      = album.user_id
+  - @albums.each do |album|
+    %ul
+      %li
+        %h4= album.title
+      %li
+        = album.description
+      %li
+        = album.user_id
 
-      - if album.photos.empty?
-        = link_to album do 
-          = image_tag "./album_no_photo"
-      - else
-        - photo = album.photos.plusminus_tally.order('plusminus_tally DESC').first
-        = link_to album do
-          = image_tag photo.image_url(:profile_grid)
-      
-    - if can? :edit, album
-      = link_to "Edit Album", edit_album_path(album)
+        - if album.photos.empty?
+          = link_to album do 
+            = image_tag "./album_no_photo"
+        - else
+          - photo = album.photos.plusminus_tally.order('plusminus_tally DESC').first
+          = link_to album do
+            = image_tag photo.image_url(:profile_grid)
+        
+      - if can? :edit, album
+        = link_to "Edit Album", edit_album_path(album)

@@ -16,7 +16,7 @@ class Ability
           user_object == user
       end
 
-      can :create, Album
+      can :create, Album 
       can :manage, Album do |album|
           album.user == user
       end

@@ -1,8 +1,10 @@
-.grid-content-area
-  .grid-content-photo
+
+.grid-content-area-photo
+  .single-photo
     = link_to @photo.album do
       = image_tag @photo.image_url(:photo_resize)
 
+  .comments-form
     - if can? :vote_up, :vote_down, @photo
       %br
       - if current_user.voted_against?(@photo)
@@ -13,45 +15,49 @@
         = link_to 'UPVOTE', vote_up_photo_path(@photo), :method => :post, class: "form-button"
         
         = link_to 'DOWNVOTE', vote_down_photo_path(@photo), :method => :post, class: "form-button"
+        %br
 
     - if can? :edit, @photo
       = link_to "Edit photo", edit_photo_path(@photo)
+      \|
+      = link_to "Remove photo", photo_path(@photo), method: :delete
+      \|
 
+    = link_to 'Share on Facebook', "https://www.facebook.com/sharer/sharer.php?u=http:\/photo-app-wdi-group-3.herokuapp.com" + photo_path(@photo)
 
-    - if can? :create, @comment
-      %h3 Form to Add a Comment
-      %ul.errors
-        - @comment.errors.full_messages.each do |error|
-          %li= error
-    
-      = form_for(@comment) do |f|
-        = hidden_field_tag :photo_id, @photo.id
-        = f.label :description
-        = f.text_field :description
-        = f.submit
+    .comments-form-content
+      - if can? :create, @comment
+        %h3 Form to Add a Comment
+        %ul.errors
+          - @comment.errors.full_messages.each do |error|
+            %li= error
+        = form_for(@comment) do |f|
+          = hidden_field_tag :photo_id, @photo.id
+          = f.text_field :description, placeholder: "Comment"
+          %br/
+          .comments-form-button
+            = f.submit
 
-    %p
-      = link_to 'Share on Facebook', "https://www.facebook.com/sharer/sharer.php?u=" + photo_path(@photo)
-
-    %p Comments
-    %ul
-      - @photo.comments.each do |comment|
-        .comment-field
-          .comment-user
-            = comment.user.email
-            - if can? :destroy, comment
-              = link_to 'Delete Comment', comment, method: :delete
-          .comment-text
+  - @photo.comments.order('created_at DESC').each do |comment|
+    .comments-form
+      .comments-form-content
+        %h4
+          = comment.user.name
+        .comment
+          %p
             = comment.description
+
+        - if can? :destroy, comment
+          = link_to 'Delete Comment', comment, method: :delete
 
 .sidebar-content-area
   .sidebar-content
     .profile-picture
-      =image_tag avatar_url(@photo.album.user)
+      =link_to image_tag(avatar_url(@photo.album.user)), @photo.album.user
       %h3= @photo.album.user.name
 
     .sidebar-text
-      %h1 Title
+      %h1 Photo Title
       %p= @photo.title
       %h1 Description
       %p= @photo.description
@@ -60,7 +66,3 @@
           Score
         %span
           = (@photo.votes_for - @photo.votes_against)
-
-
-
-

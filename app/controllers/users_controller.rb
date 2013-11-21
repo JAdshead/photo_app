@@ -36,11 +36,10 @@ class UsersController < Devise::RegistrationsController
     super
     @user.role = 'user'
     @user.passwordSet = true
-    @user.save!
+    @user.save
   end
 
   private
-
   # check if we need password to update user data
   # ie if password or email was changed
   # extend this as needed

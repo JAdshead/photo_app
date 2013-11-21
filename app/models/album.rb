@@ -12,6 +12,9 @@ class Album < ActiveRecord::Base
   ########## LOGIC ##########
   ###########################
 
+
+  ### *** validations must be added to test suite if changed!
+
   # validate  :form_validator
 
   # def form_validator
