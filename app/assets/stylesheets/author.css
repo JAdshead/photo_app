@@ -68,6 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-links-home {
   float: right;
+  /*display: inline-flex;*/
   opacity: 1;
   margin-right: 50px;
   width: 100%;
@@ -80,7 +81,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-links img {
-  width: 17%;
+  margin-top: -0.5em;
+  width: 12%;
   border-radius: 100%;
 }
 
@@ -92,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 30px;
   color: white;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 0.8em;
   text-decoration: none;
 }
 
@@ -491,6 +493,20 @@ font-size: 1.05em;
 }
 
 /* Home hover */
+
+.william-paginate {
+  font-size: 1.2em;
+  padding-bottom: 2em;
+  padding-top:2em;
+  color: #2e3132;
+}
+
+.william-paginate a {
+  color: #a8b4ba;
+
+}
+
+
 .background-home-grid-photo {
   display: none
 
