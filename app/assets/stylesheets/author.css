@@ -33,6 +33,7 @@ body {
   color: #424b51;
   font-weight: 400;
   font-size: 16px;
+  background-color: #f2f6f7;
 }
 
 
@@ -258,7 +259,7 @@ li.background {
 
 .profile-grid-photo {
   width: 50%;
-  height: auto;
+  height: 15em;
   width: 48%;
   margin: 1%;
   float: left;
@@ -270,7 +271,7 @@ li.background {
   width: 48%;
   padding: 0px;
   /*margin: 20px;*/
-  height: 240px;
+  height: 15em;
 }
 
 .profile-grid-photo img {
@@ -278,6 +279,26 @@ li.background {
   width: 100%;
 }
 
+
+.profile-grid-photo form {
+  text-align: center;
+  padding-top: 25px;
+  color: white;
+}
+
+.profile-grid-photo input {
+  background: none;
+  border: 1px solid white;
+  border-radius: 2px;
+  height: 3em;
+}
+
+.profile-grid-photo .photo-upload {
+  float: left;
+  width: 6em;
+  margin-left: 7em;
+
+}
 
 .profile-grid-form {
   background: white;
@@ -336,7 +357,8 @@ font-size: 1.05em;
   background: none;
   padding: 20px;
   font-size: 8em;
-  border: 0;
+  border: none;
+  box-shadow: none;
   margin: 40px;
 }
 .overlay input:focus { outline: none; }
@@ -366,7 +388,7 @@ font-size: 1.05em;
   text-align: center;
 }
 
-<<<<<<< HEAD
+
 
 /** SEARCH **/
 
@@ -385,11 +407,20 @@ font-size: 1.05em;
   width: 100%;
   height: 250px;
 }
-=======
+
+/** no results search error **/
+
+.error_message_searches {
+  font-size: 3em;
+  font-weight: 600;
+  margin: 6em 0;
+  color: #A0B3B8;
+}
+
 /* Home hover */
 .background-home-grid-photo {
-  display: none
-
+  display: none;
+  background-color: rgba(236, 232, 232, 0.7);
 }
 
 .background-home-grid-photo a {
@@ -418,6 +449,47 @@ font-size: 1.05em;
 }
 
 
+/**** FORMS *****/
 
+input {
 
->>>>>>> 200672fa83f5c28aa02e0e1576bcca7f0a702ad1
+    border-radius: 3px;
+    padding: 1em;
+    margin: 10px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #DDDDDD;
+
+    -moz-box-shadow:    inset 0px 2px 0px 0px rgba(0,0,0,0.04);
+    -webkit-box-shadow: inset 0px 2px 0px 0px rgba(0,0,0,0.04);
+    box-shadow:         inset 0px 2px 0px 0px rgba(0,0,0,0.04);
+    outline-width: 0;
+}
+
+.user-form {
+    background-color: white;
+    margin: 10em auto 8em auto;
+    text-align: center;
+    width: 29em;
+    border-radius: 3px;
+    -moz-box-shadow:    0px 1px 3px 0px rgba(0,0,0,0.08);
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.08);
+    box-shadow:         0px 1px 3px 0px rgba(0,0,0,0.08);
+}
+
+.form-button {
+
+    border: none;
+    border-radius: 3px;
+    margin: 0;
+    padding: 1.3em 8em;
+    background-color: #67878A;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.125em;
+}
+
+.form-content {
+  padding: 2em 0;
+}
