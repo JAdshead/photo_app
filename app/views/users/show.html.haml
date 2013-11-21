@@ -10,6 +10,7 @@
         = link_to album do
           = image_tag photo.image_url(:profile_grid)
   .profile-grid-photo.add
+    %p.add-album-plus +
     = form_for Album.new, html: { enctype: "multipart/form-data" } do |f|
       = f.text_field :title, placeholder: "Album Title"
       = f.text_field :description, placeholder: "Album Description"

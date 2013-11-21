@@ -12,7 +12,7 @@
       <%= f.password_field :password, class: "inp-btn" %>
 
       <% if devise_mapping.rememberable? -%>
-        <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+        <div class="remember-check-box"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
       <% end -%>
 
       <div><%= f.submit "Sign in", class: "form-button"%></div>
