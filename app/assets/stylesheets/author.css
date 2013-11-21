@@ -33,7 +33,7 @@ a {
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Raleway', sans-serif;
   letter-spacing: 0.1em;
   color: #424b51;
   font-weight: 400;
@@ -312,12 +312,15 @@ li.background {
   display: none;
 }
 
-.profile-grid-photo input {
+
+/***.profile-grid-photo input {
   background: none;
   border: 1px solid white;
   border-radius: 2px;
   height: 3em;
-}
+  color: white;
+  font-weight: 300;
+} **/
 
 .profile-grid-photo .photo-upload {
   float: left;
@@ -435,9 +438,6 @@ li.background {
 
 /*** SEARCHES ***/
 
-.error_message_searches {
-  text-align: center;
-}
 
 /* letter-spacing: 0.19em;
 text-transform: uppercase;
@@ -453,15 +453,6 @@ font-size: 1.05em;
     color: #d5d8d8;
 }
 
-.close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 2em;
-  cursor: pointer;
-  color: #babebe;
-
-}
 
 .overlay {
   position: fixed;
@@ -481,6 +472,7 @@ font-size: 1.05em;
   background: none;
   padding: 20px;
   font-size: 8em;
+  font-weight: 400;
   border: none;
   box-shadow: none;
   margin: 40px;
@@ -488,11 +480,13 @@ font-size: 1.05em;
 .overlay input:focus { outline: none; }
 
 .overlay .close {
-    position: absolute;
-    font-weight: 500;
-    top: 50px;
-    right: 100px;
-    font-size: 30px;
+  cursor: pointer;  
+  position: absolute;
+  font-weight: 500;
+  font-size: 5em;
+  top: 0.05em;
+  right: 0.7em;
+  color: #B0BFC4;
 }
 
 
@@ -536,11 +530,17 @@ font-size: 1.05em;
 
 .error_message_searches {
   font-size: 3em;
+  text-align: center;
   font-weight: 600;
-  margin: 6em 0;
   color: #A0B3B8;
 }
 
+.error_message_searches  {
+  font-size: 3em;
+  text-align: center;
+  font-weight: 600;
+  color: #A0B3B8;
+}
 /* Home hover */
 
 .william-paginate {
@@ -592,6 +592,9 @@ input {
 
     border-radius: 3px;
     padding: 1em;
+    color: #9EADB8;
+    font-weight: 300;
+    font-family: 'Raleway', sans-serif;
     margin: 1em;
 
     background: #FFFFFF;
@@ -656,6 +659,72 @@ p.add-album-plus {
   margin-top: 0.8em;
 }
 
+.confirm-and-forgot a {
+  margin-top: 2em;
+  display: block;
+}
+
+/**** COMMENTS ****/
+
+
+
+.comment-user {
+    font-size: 15px;
+    margin: 44px 0 0 36px;
+    float: left;
+    text-transform: strong;
+}
+
+.comment-text {
+    margin: 64px 0 0 -13px;
+    float: left;
+    color: #AFC4C9;
+}
+
+.comment-field {
+    width: 600px;
+    height: 57px;
+    margin: 30px 0 0 251px;
+    background-color: white;  
+}
+
+.comment-form-button {
+    border-radius: 3px;
+    padding: 17px 228px;
+    margin: 10px 0 20px 251px;
+
+    background: #50DDC1;
+
+    border: 1px solid rgba(0,0,0,0.04);
+
+    -moz-box-shadow:    0px 1px 0px 1px rgba(0,0,0,0.07);
+    -webkit-box-shadow: 0px 1px 0px 1px rgba(0,0,0,0.07);
+    box-shadow:         0px 1px 0px 1px rgba(0,0,0,0.07);
+
+    /* text */
+
+    color: white;
+}
+
+.comment-form-button:hover {
+    background: #43edcb;
+
+
+}
+
+/*** PHOTO PAGE ***/
+
+
+
+.grid-content-photo {
+  text-align: center;
+}
+
+.grid-content-photo .form-button {
+  padding: 1.3em 2em;
+  margin: 2em 0 0 0;
+}
+
 .notice-style{
   color: black;
   text-align: center;
@@ -715,8 +784,6 @@ p.add-album-plus {
 img:hover {
   color:rgba(250,250,250,1);
 }
-
-
 
 
 

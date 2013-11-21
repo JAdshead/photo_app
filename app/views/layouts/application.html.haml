@@ -24,7 +24,7 @@
           = link_to 'Login', new_user_session_path
         %a.search  Search
         .overlay
-          %span.close X
+          %span.close x
           = form_tag searches_path do
             = text_field_tag :query, nil, :class => 'search-input', :placeholder => 'search...',:autocomplete =>"off" 
     

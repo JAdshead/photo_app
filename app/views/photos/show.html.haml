@@ -1,9 +1,9 @@
+
 .grid-content-area-photo
   .single-photo
     = link_to @photo.album do
       = image_tag @photo.image_url(:photo_resize)
 
-  .comments-form
     - if can? :vote_up, :vote_down, @photo
       %br
       - if current_user.voted_against?(@photo)
@@ -11,9 +11,9 @@
       - elsif current_user.voted_for?(@photo)
         %p You have voted for this photo
       - else current_user.voted_against?(@photo)
-        = link_to 'VOTE UP', vote_up_photo_path(@photo), :method => :post
-        \|
-        = link_to 'DOWN VOTE', vote_down_photo_path(@photo), :method => :post
+        = link_to 'UPVOTE', vote_up_photo_path(@photo), :method => :post, class: "form-button"
+        
+        = link_to 'DOWNVOTE', vote_down_photo_path(@photo), :method => :post, class: "form-button"
         %br
 
     - if can? :edit, @photo
@@ -22,20 +22,9 @@
       = link_to "Remove photo", photo_path(@photo), method: :delete
       \|
 
-    = link_to 'Share on Facebook', "https://www.facebook.com/sharer/sharer.php?u=http://photo-app-wdi-group-3.herokuapp.com" + photo_path(@photo)
 
-    .comments-form-content
-      - if can? :create, @comment
-        %h3 Form to Add a Comment
-        %ul.errors
-          - @comment.errors.full_messages.each do |error|
-            %li= error
-        = form_for(@comment) do |f|
-          = hidden_field_tag :photo_id, @photo.id
-          = f.text_field :description, placeholder: "Comment"
-          %br/
-          .comments-form-button
-            = f.submit
+    = link_to 'Share on Facebook', "https://www.facebook.com/sharer/sharer.php?u=http:\/photo-app-wdi-group-3.herokuapp.com" + photo_path(@photo)
+
 
   - @photo.comments.order('created_at DESC').each do |comment|
     .comments-form
@@ -65,7 +54,3 @@
           Score
         %span
           = (@photo.votes_for - @photo.votes_against)
-
-
-
-
