@@ -270,11 +270,10 @@ li.background {
 }
 
 .profile-grid-photo.add{
-  background: url(/assets/new-album.png);
+  background-color: #495C66;
   background-size: 48% auto;
   width: 48%;
   padding: 0px;
-  /*margin: 20px;*/
   height: 15em;
 
 }
@@ -518,7 +517,7 @@ input {
 
 .user-form {
     background-color: white;
-    margin: 10em auto 8em auto;
+    margin: 7em auto;
     text-align: center;
     width: 29em;
     border-radius: 3px;
@@ -531,7 +530,7 @@ input {
 
     border: none;
     border-radius: 3px;
-    margin: 0;
+    margin: 10px 0 0 0;
     padding: 1.3em 8em;
     background-color: #67878A;
     color: white;
@@ -540,12 +539,13 @@ input {
 }
 
 .form-content {
-  padding: 2em 0;
+  padding: 1em 0;
 }
 
 .form-content .remember-check-box {
-  padding: 2em 0;
+  padding: 1em 0;
   margin-right: 12em;
+  color: #4C6469;
 }
 
 p.add-album-plus {
@@ -556,4 +556,12 @@ p.add-album-plus {
   margin: 0;
   padding: 0;
   line-height: 240px;
+}
+
+.devise-shared-links a {
+  color: #4C6469;
+}
+
+.devise-shared-links img {
+  margin-top: 0.8em;
 }
