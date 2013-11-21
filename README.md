@@ -1,14 +1,16 @@
 ##PHTGRPHR
 
-PHTGRPHR is a web application that let registered users upload, manage and share their pictures.
+PHTGRPHR is a web application that lets registered users upload, manage and share their pictures.
 
-Photos are ordered in albums and each photo can be tagged, voted, commented or shared through facebook.
+Users create their own albums and add photos with searchable tags.
 
-Later, users will be able to search photos by tags or just take a look of the most voted photos, all them displayed in the home page.
+Other users can vote on, comment on and share photos on Facebook.
 
-Each of the most voted photos are connected with it photographer profile, letting take a look of all photographer album collection. If the user is logged, he will be able to comment or vote for the photo.
+Visitors to the site can search photos by tags and browse the most voted on photos displayed on the homepage.
 
-The application has differents ways to register: using your google or facebook account or signing up directly. In case of forget the password, don't worry, an email with instructions will be sended!
+The most voted on photos displayed on the homepage are connected to the profile of the photographer who owns the photo. Visitors and click through to the photographers profile and take a look at all of the photos belonging to that photographer.
+
+There are a number of ways to register as a user on the site: using your Google or Facebook account or signing up directly with the site. When a user registers using Google or Facebook, their profile picture is imported from either service. The user can change their profile picture at any time. If a user forgets their password, they can request for their password to be resent. A quick and simple email with instructions will be sent to him!
 
 Team Members
 -----------------------
@@ -16,4 +18,5 @@ Jonny Adshead
 Jack Lalley
 Selina Chotai
 Daida Medina
+
 
