@@ -1,6 +1,7 @@
 .grid-content-area
-  = link_to @photo.album do
-    = image_tag @photo.image_url(:photo_resize)
+  .single-photo
+    = link_to @photo.album do
+      = image_tag @photo.image_url(:photo_resize)
 
   - if can? :vote_up, :vote_down, @photo
     %br
@@ -48,7 +49,7 @@
 .sidebar-content-area
   .sidebar-content
     .profile-picture
-      =image_tag avatar_url(@photo.album.user)
+      =link_to image_tag(avatar_url(@photo.album.user)), @photo.album.user
       %h3= @photo.album.user.name
 
     .sidebar-text

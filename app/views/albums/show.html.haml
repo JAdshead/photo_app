@@ -23,7 +23,7 @@
 .sidebar-content-area
   .sidebar-content
     .profile-picture
-      = image_tag avatar_url(@album.user)
+      =link_to image_tag(avatar_url(@album.user)), @album.user
       %h3 #{@album.user.name}
 
     .sidebar-text
