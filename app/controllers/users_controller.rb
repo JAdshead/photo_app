@@ -36,7 +36,7 @@ class UsersController < Devise::RegistrationsController
     super
     @user.role = 'user'
     @user.passwordSet = true
-    @user.save!
+    @user.save
   end
 
   private
