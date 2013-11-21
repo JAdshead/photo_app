@@ -56,7 +56,6 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
   width: 100%;
   top: 0;
-
 }
 
 .nav-links {
@@ -68,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-links-home {
   float: right;
-  /*display: inline-flex;*/
+  
   opacity: 1;
   margin-right: 50px;
   width: 100%;
@@ -111,6 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .user-nav-home {
   font-weight: 300;
+  display: inline;
   text-transform: uppercase;
   font-size: 12px;
   padding-left: 1000px;
