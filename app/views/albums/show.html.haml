@@ -19,12 +19,7 @@
   - @photos.each do |photo|
     .album-photo
       = link_to image_tag(photo.image_url(:album_grid)), photo_path(photo)
-      / = photo.title
-      / = photo.description
-      / = photo.tag_list
-      / - if can? :destroy, photo
-      /   = link_to "Remove photo", photo_path(photo), method: :delete
-
+     
 .sidebar-content-area
   .sidebar-content
     .profile-picture
