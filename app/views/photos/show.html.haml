@@ -3,46 +3,45 @@
     = link_to @photo.album do
       = image_tag @photo.image_url(:photo_resize)
 
-  - if can? :vote_up, :vote_down, @photo
-    %br
-    - if current_user.voted_against?(@photo)
-      %p You have voted against this photo
-    - elsif current_user.voted_for?(@photo)
-      %p You have voted for this photo
-    - else current_user.voted_against?(@photo)
-      = link_to 'UP VOTE for this photo!', vote_up_photo_path(@photo), :method => :post
+  .comments-form
+    - if can? :vote_up, :vote_down, @photo
+      %br
+      - if current_user.voted_against?(@photo)
+        %p You have voted against this photo
+      - elsif current_user.voted_for?(@photo)
+        %p You have voted for this photo
+      - else current_user.voted_against?(@photo)
+        = link_to 'UP VOTE for this photo!', vote_up_photo_path(@photo), :method => :post
+        \|
+        = link_to 'DOWN VOTE for this photo!', vote_down_photo_path(@photo), :method => :post
+
+    - if can? :edit, @photo
+      = link_to "Edit photo", edit_photo_path(@photo)
+      \|  
+      = link_to "Remove photo", photo_path(@photo), method: :delete
       \|
-      = link_to 'DOWN VOTE for this photo!', vote_down_photo_path(@photo), :method => :post
-
-  - if can? :edit, @photo
-    = link_to "Edit photo", edit_photo_path(@photo)
-    \|  
-    = link_to "Remove photo", photo_path(@photo), method: :delete
-
-
-  - if can? :create, @comment
-    %h3 Form to Add a Comment
-    %ul.errors
-      - @comment.errors.full_messages.each do |error|
-        %li= error
-
-    = form_for(@comment) do |f|
-      = hidden_field_tag :photo_id, @photo.id
-      = f.label :description
-      = f.text_field :description
-      %br/
-      = f.submit
-
-  %p
     = link_to 'Share on Facebook', "https://www.facebook.com/sharer/sharer.php?u=" + photo_path(@photo)
-
-  %p Comments
-  %ul
-    - @photo.comments.each do |comment|
-      %li
-        = comment.description
-      %li
-        = comment.user.email
+    .comments-form-content
+      - if can? :create, @comment
+        %h3 Form to Add a Comment
+        %ul.errors
+          - @comment.errors.full_messages.each do |error|
+            %li= error
+        = form_for(@comment) do |f|
+          = hidden_field_tag :photo_id, @photo.id
+          = f.text_field :description, placeholder: "Comment"
+          %br/
+          .comments-form-button
+            = f.submit
+  
+  - @photo.comments.order('created_at DESC').each do |comment|
+    .comments-form
+      .comments-form-content
+        %h4
+          = comment.user.name
+        .comment
+          %p
+            = comment.description
         - if can? :destroy, comment
           = link_to 'Delete Comment', comment, method: :delete
 

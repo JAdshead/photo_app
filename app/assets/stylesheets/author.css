@@ -602,3 +602,54 @@ p.add-album-plus {
 }
 
 
+/*comment forms*/
+.comments-form-content {
+  padding: 1em 0; 
+  padding-bottom: 2em;
+}
+
+.comments-form {
+    background-color: white;
+    margin: 2em auto;
+    text-align: center;
+    width: 40em;
+    border-radius: 3px;
+    -moz-box-shadow:    0px 1px 3px 0px rgba(0,0,0,0.08);
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.08);
+    box-shadow:         0px 1px 3px 0px rgba(0,0,0,0.08);
+}
+
+
+
+.comment p {
+  text-align: left;
+  padding-left: 2em;
+}
+.comments-form-content ul {
+  padding-left: 0px;
+}
+
+.comments-form-button input {
+    width: 50%;
+    border: none;
+    border-radius: 3px;
+    margin: 10px 0 0 0;
+    padding: 1.3em 1em;
+    background-color: #67878A;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.125em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
