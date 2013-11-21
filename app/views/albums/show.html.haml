@@ -1,5 +1,4 @@
-.grid-content-area
-
+.album-form-grid
   - if can? :create, Photo
     %h3 Add photo
     .add-photo-form
@@ -17,9 +16,9 @@
           = f.label :tags
           = f.text_field :tag_list, id: "photo_tags_list"
         = f.submit
-
+.album-grid
   - @photos.each do |photo|
-    .profile-grid-photo
+    .album-photo
       = link_to image_tag(photo.image_url(:profile_grid)), photo_path(photo)
       / = photo.title
       / = photo.description
