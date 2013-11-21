@@ -32,7 +32,8 @@
             / = submit_tag "Search"
         .tagline
           %h1 Creating beautiful albums of your favourite photos.
-
+      = notice
+      = alert  
     .pagination
       .grid-container-home.cf
         - @photos.each do |photo|

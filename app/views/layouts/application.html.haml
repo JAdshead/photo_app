@@ -27,7 +27,8 @@
           %span.close X
           = form_tag searches_path do
             = text_field_tag :query, nil, :class => 'search-input', :placeholder => 'search...',:autocomplete =>"off" 
-          
+    = notice
+    = alert    
     .yield
       = yield 
 
