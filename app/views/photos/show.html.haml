@@ -16,7 +16,7 @@
 
   - if can? :edit, @photo
     = link_to "Edit photo", edit_photo_path(@photo)
-    \|  
+    \|
     = link_to "Remove photo", photo_path(@photo), method: :delete
 
 
@@ -34,7 +34,7 @@
       = f.submit
 
   %p
-    = link_to 'Share on Facebook', "https://www.facebook.com/sharer/sharer.php?u=" + photo_path(@photo)
+    = link_to 'Share on Facebook', "https://www.facebook.com/sharer/sharer.php?u=http://photo-app-wdi-group-3.herokuapp.com" + photo_path(@photo)
 
   %p Comments
   %ul
