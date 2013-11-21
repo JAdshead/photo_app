@@ -33,6 +33,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :search_grid do 
     process :resize_to_fill => [358, 250]
   end
+
+  version :album_grid do 
+    process :resize_to_fill => [341, 240]
+  end
   
   version :avatar_resize do
     process :resize_to_fill => [120, 120]
