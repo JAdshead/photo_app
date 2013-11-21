@@ -15,6 +15,8 @@
 
   - if can? :edit, @photo
     = link_to "Edit photo", edit_photo_path(@photo)
+    \|  
+    = link_to "Remove photo", photo_path(@photo), method: :delete
 
 
   - if can? :create, @comment
@@ -50,7 +52,7 @@
       %h3= @photo.album.user.name
 
     .sidebar-text
-      %h1 Title
+      %h1 Photo Title
       %p= @photo.title
       %h1 Description
       %p= @photo.description
