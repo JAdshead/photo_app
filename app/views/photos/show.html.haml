@@ -1,47 +1,48 @@
 .grid-content-area
-  = link_to @photo.album do
-    = image_tag @photo.image_url(:photo_resize)
+  .grid-content-photo
+    = link_to @photo.album do
+      = image_tag @photo.image_url(:photo_resize)
 
-  - if can? :vote_up, :vote_down, @photo
-    %br
-    - if current_user.voted_against?(@photo)
-      %p You have voted against this photo
-    - elsif current_user.voted_for?(@photo)
-      %p You have voted for this photo
-    - else current_user.voted_against?(@photo)
-      = link_to 'UP VOTE for this photo!', vote_up_photo_path(@photo), :method => :post
-      \|
-      = link_to 'DOWN VOTE for this photo!', vote_down_photo_path(@photo), :method => :post
+    - if can? :vote_up, :vote_down, @photo
+      %br
+      - if current_user.voted_against?(@photo)
+        %p You have voted against this photo
+      - elsif current_user.voted_for?(@photo)
+        %p You have voted for this photo
+      - else current_user.voted_against?(@photo)
+        = link_to 'UPVOTE', vote_up_photo_path(@photo), :method => :post, class: "form-button"
+        
+        = link_to 'DOWNVOTE', vote_down_photo_path(@photo), :method => :post, class: "form-button"
 
-  - if can? :edit, @photo
-    = link_to "Edit photo", edit_photo_path(@photo)
+    - if can? :edit, @photo
+      = link_to "Edit photo", edit_photo_path(@photo)
 
 
-  - if can? :create, @comment
-    %h3 Form to Add a Comment
-    %ul.errors
-      - @comment.errors.full_messages.each do |error|
-        %li= error
+    - if can? :create, @comment
+      %h3 Form to Add a Comment
+      %ul.errors
+        - @comment.errors.full_messages.each do |error|
+          %li= error
+    
+      = form_for(@comment) do |f|
+        = hidden_field_tag :photo_id, @photo.id
+        = f.label :description
+        = f.text_field :description
+        = f.submit
 
-    = form_for(@comment) do |f|
-      = hidden_field_tag :photo_id, @photo.id
-      = f.label :description
-      = f.text_field :description
-      %br/
-      = f.submit
+    %p
+      = link_to 'Share on Facebook', "https://www.facebook.com/sharer/sharer.php?u=" + photo_path(@photo)
 
-  %p
-    = link_to 'Share on Facebook', "https://www.facebook.com/sharer/sharer.php?u=" + photo_path(@photo)
-
-  %p Comments
-  %ul
-    - @photo.comments.each do |comment|
-      %li
-        = comment.description
-      %li
-        = comment.user.email
-        - if can? :destroy, comment
-          = link_to 'Delete Comment', comment, method: :delete
+    %p Comments
+    %ul
+      - @photo.comments.each do |comment|
+        .comment-field
+          .comment-user
+            = comment.user.email
+            - if can? :destroy, comment
+              = link_to 'Delete Comment', comment, method: :delete
+          .comment-text
+            = comment.description
 
 .sidebar-content-area
   .sidebar-content
