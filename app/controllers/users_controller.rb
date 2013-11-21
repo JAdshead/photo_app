@@ -39,6 +39,7 @@ class UsersController < Devise::RegistrationsController
     if @user.password == nil
     else
       @user.save!
+      puts "confirmation email sent"
     end
   end
 
