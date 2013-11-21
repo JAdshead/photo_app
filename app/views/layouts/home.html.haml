@@ -32,8 +32,12 @@
             / = submit_tag "Search"
         .tagline
           %h1 Creating beautiful albums of your favourite photos.
+<<<<<<< HEAD
       = notice
       = alert  
+=======
+          %h1.notice=notice
+>>>>>>> style/signup-confirmation-email-message
     .pagination
       .grid-container-home.cf
         - @photos.each do |photo|
@@ -45,8 +49,8 @@
                 %h1.background
                   = photo.title
                 %h1.background
-                  Score 
-                  .score-link 
+                  Score
+                  .score-link
                     #{photo.votes_for - photo.votes_against }
     .william-paginate.cf= will_paginate @photos
 
