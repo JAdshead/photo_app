@@ -11,19 +11,11 @@
           = image_tag photo.image_url(:profile_grid)
   .profile-grid-photo.add
     = form_for Album.new, html: { enctype: "multipart/form-data" } do |f|
-      = f.label :title
-      = f.text_field :title
-      %br/
-      = f.label :description
-      = f.text_field :description
-      %br/
-      = label_tag :photo, :title
-      = text_field :photo, :title
-      = label_tag :photo, :description
-      = text_field :photo, :description
-      = label_tag :photo
-      = file_field :photo, :image
-      %br
+      = f.text_field :title, placeholder: "Album Title"
+      = f.text_field :description, placeholder: "Album Description"
+      = text_field :photo, :title, placeholder: "Photo Title"
+      = text_field :photo, :description, placeholder: "Photo Description"
+      = file_field :photo, :image, class: "photo-upload"
       .actions
         = f.submit 'Create Album'
 

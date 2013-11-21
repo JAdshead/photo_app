@@ -33,6 +33,7 @@ body {
   color: #424b51;
   font-weight: 400;
   font-size: 16px;
+  background-color: #f2f6f7;
 }
 
 
@@ -56,7 +57,6 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
   width: 100%;
   top: 0;
-
 }
 
 .nav-links {
@@ -68,6 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-links-home {
   float: right;
+  
   opacity: 1;
   margin-right: 50px;
   width: 100%;
@@ -80,7 +81,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-links img {
-  width: 17%;
+  margin-top: -0.5em;
+  width: 12%;
   border-radius: 100%;
 }
 
@@ -92,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 30px;
   color: white;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 0.8em;
   text-decoration: none;
 }
 
@@ -109,6 +111,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .user-nav-home {
   font-weight: 300;
+  display: inline;
   text-transform: uppercase;
   font-size: 12px;
   padding-left: 1000px;
@@ -258,6 +261,7 @@ li.background {
 
 .profile-grid-photo {
   width: 50%;
+  height: 15em;
   height: 241px;
   width: 48%;
   margin: 1%;
@@ -269,7 +273,8 @@ li.background {
   background-size: 48% auto;
   width: 48%;
   padding: 0px;
-  height: 240px;
+  /*margin: 20px;*/
+  height: 15em;
 
 }
 
@@ -279,6 +284,26 @@ li.background {
   width: 100%;
 }
 
+
+.profile-grid-photo form {
+  text-align: center;
+  padding-top: 25px;
+  color: white;
+}
+
+.profile-grid-photo input {
+  background: none;
+  border: 1px solid white;
+  border-radius: 2px;
+  height: 3em;
+}
+
+.profile-grid-photo .photo-upload {
+  float: left;
+  width: 6em;
+  margin-left: 7em;
+
+}
 
 .profile-grid-form {
   background: white;
@@ -336,7 +361,8 @@ font-size: 1.05em;
   background: none;
   padding: 20px;
   font-size: 8em;
-  border: 0;
+  border: none;
+  box-shadow: none;
   margin: 40px;
 }
 .overlay input:focus { outline: none; }
@@ -347,110 +373,6 @@ font-size: 1.05em;
     top: 50px;
     right: 100px;
     font-size: 30px;
-}
-
-/*** SIGNIN PAGE ***/
-
-.devise-form-container {
-  padding-top: 10em;
-  background-color: #f2f6f7;
-}
-
-.inputbox-outer{
-  font-size: 2em;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-/*  margin: auto;*/
- /* border-radius: 1em;*/
-}
-
-.inputbox-inner{
-  width:50%;
-/*  display: block;
-  margin: 0, auto;*/
-/*  padding: 3em;*/
-/*  font-size: 2em;
-  margin: auto;*/
- /* border-radius: 1em;*/
-}
-
-.inputbox-header {
-  background: #363e43;
-  color: white;
-  border-width:5px;
-  border-style: solid;
-  border-color: #f2f6f7;
-}
-
-.inputbox-body {
-  background-color: white;
-/*  color: white;*/
-  border-width:5px;
-  border-style: solid;
-  border-color: #f2f6f7;
-  padding-top: 2em;
-}
-
-.signin {
-  text-align: center;
-  background-color: blue;
-}
-
-.input-select-disable {
-    outline-color: none;
-}
-
-.sign-button {
-  color: red;
-}
-
-.signin-button input {
-  background-color: #2e3132;
-
-}
-
-.form-header{
-  text-align: center;
-  border-color: white;
-  border-style: solid;
-  border-width: 2px;
-  margin-left: 3em;
-  margin-right: 3em;
-}
-
-.inputbox-field {
-  text-align: center;
-  border-color: white;
-  border-style: solid;
-  border-width: 2px;
-  margin-left: 3em;
-  margin-right: 3em;
-  padding-top: 1em;
-}
-
-.inputbox-field input {
-  width: 100%;
-  color: white;
-/*  border-width: 10px, 1px, 1px, 1px;*/
-  border-style: solid;
-  border-color: #f2f6f7;
-  border-radius: 4px;
-  box-shadow: 0px -3px #f2f6f7;
-  font-weight: 200;
-}
-
-.rememberme {
-  width: 100%;
-  margin-left: 3em;
-  margin-right: 3em;
-  padding-top: 1em;
-}
-
-.devise-shared-links a {
-  font-size: 10px;
 }
 
 
@@ -490,10 +412,33 @@ font-size: 1.05em;
   height: 250px;
 }
 
-/* Home hover */
-.background-home-grid-photo {
-  display: none
+/** no results search error **/
 
+.error_message_searches {
+  font-size: 3em;
+  font-weight: 600;
+  margin: 6em 0;
+  color: #A0B3B8;
+}
+
+/* Home hover */
+
+.william-paginate {
+  font-size: 1.2em;
+  padding-bottom: 2em;
+  padding-top:2em;
+  color: #2e3132;
+}
+
+.william-paginate a {
+  color: #a8b4ba;
+
+}
+
+
+.background-home-grid-photo {
+  display: none;
+  background-color: rgba(236, 232, 232, 0.7);
 }
 
 .background-home-grid-photo a {
@@ -522,4 +467,48 @@ font-size: 1.05em;
 }
 
 
+/**** FORMS *****/
+
+input {
+
+    border-radius: 3px;
+    padding: 1em;
+    margin: 10px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #DDDDDD;
+
+    -moz-box-shadow:    inset 0px 2px 0px 0px rgba(0,0,0,0.04);
+    -webkit-box-shadow: inset 0px 2px 0px 0px rgba(0,0,0,0.04);
+    box-shadow:         inset 0px 2px 0px 0px rgba(0,0,0,0.04);
+    outline-width: 0;
+}
+
+.user-form {
+    background-color: white;
+    margin: 10em auto 8em auto;
+    text-align: center;
+    width: 29em;
+    border-radius: 3px;
+    -moz-box-shadow:    0px 1px 3px 0px rgba(0,0,0,0.08);
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.08);
+    box-shadow:         0px 1px 3px 0px rgba(0,0,0,0.08);
+}
+
+.form-button {
+
+    border: none;
+    border-radius: 3px;
+    margin: 0;
+    padding: 1.3em 8em;
+    background-color: #67878A;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.125em;
+}
+
+.form-content {
+  padding: 2em 0;
+}
 
