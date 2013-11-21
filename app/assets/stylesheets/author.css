@@ -569,3 +569,12 @@ p.add-album-plus {
 .devise-shared-links img {
   margin-top: 0.8em;
 }
+
+.notice-style{
+  color: black;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: -1em; 
+}
+
+
