@@ -197,7 +197,7 @@ li.background {
 
 .grid-content-area {
   width: 80%;
-  height: 99em;
+  min-height: 100%;
   background-color: #f2f6f7;
   float: left;
   margin-top: 70px;
@@ -205,12 +205,21 @@ li.background {
   padding: 20px;
 }
 
+.grid-content-area-photo {
+  width: 70%;
+  min-height: 100%;
+  background-color: #f2f6f7;
+  float: left;
+  margin-top: 70px;
+  margin-bottom: 10em;
+  padding-top: 1em;
+  margin-left: 10%;
+  margin-right: 5%;
+}
 
-/*.single-photo img {
-  position: absolute;
-  margin-right: auto;
-}*/
-
+.single-photo{
+  width: 800px;
+}
 
 /*** SIDEBAR SECTION **/
 

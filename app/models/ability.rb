@@ -27,7 +27,7 @@ class Ability
 
       can :create, Photo
       can :manage, Photo do |photo|
-          photo.album.user == user
+          photo.user == user
       end
 
 

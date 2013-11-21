@@ -3,7 +3,10 @@
 <div class="user-form">
   <div class="form-content">
       <h2>Sign in</h2>
-
+      <div class="notice-style">
+        <%= notice %>
+        <%= alert %>
+      </div>
       <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
         <%= f.email_field :email, :autofocus => true, class: "inp-btn", placeholder: "email" %>
