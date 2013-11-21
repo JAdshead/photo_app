@@ -1,5 +1,6 @@
 .album-form-grid
   - if can? :create, Photo
+<<<<<<< HEAD
     %h3 Add photo
     .add-photo-form
       %ul.errors
@@ -16,6 +17,24 @@
           = f.label :tags
           = f.text_field :tag_list, id: "photo_tags_list"
         ..form-button= f.submit
+=======
+    .user-form.form-content
+
+      %h3 Add photo
+      .add-photo-form
+        %ul.errors
+          - @photo.errors.full_messages.each do |error|
+            %li= error
+        = form_for(@photo) do |f|
+          = hidden_field_tag :album_id, @album.id
+          = f.text_field :title,  placeholder: "Title"
+          = f.text_field :description, placeholder: "Description"
+          = f.file_field :image
+          .input-row
+            = f.label :tags
+            = f.text_field :tag_list, id: "photo_tags_list"
+          = f.submit
+>>>>>>> style/forms-login-stlye
 .album-grid
   - @photos.each do |photo|
     .album-photo
