@@ -19,7 +19,7 @@
 .album-grid
   - @photos.each do |photo|
     .album-photo
-      = link_to image_tag(photo.image_url(:profile_grid)), photo_path(photo)
+      = link_to image_tag(photo.image_url(:album_grid)), photo_path(photo)
       / = photo.title
       / = photo.description
       / = photo.tag_list
