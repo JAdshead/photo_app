@@ -623,12 +623,15 @@ input {
     box-shadow:         0px 1px 3px 0px rgba(0,0,0,0.08);
 }
 
+.votes {
+  margin-bottom: 2em;
+  padding-top: 2em;
+}
 .form-button {
-
     border: none;
     border-radius: 3px;
     margin: 10px 0 0 0;
-    padding: 1.3em 8em;
+    padding: 1.3em 2em;
     background-color: #67878A;
     color: white;
     text-transform: uppercase;
