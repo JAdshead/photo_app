@@ -454,10 +454,6 @@ li {
   outline-width: 0;
 }
 
-.select2-container {
-  padding: 0em
-}
-
 .select2-container{
   width: 266px;
   border-radius: 3px;
@@ -470,6 +466,10 @@ li {
   box-shadow: inset 0px 2px 0px 0px rgba(0,0,0,0.04);
   outline-width: 0;
 }
+.select2-choices {
+  border: 1px solid rgba(225,225,225,0.9) !important;*/
+
+}
 
 .album-form-content {
   padding: 1em 0; 
@@ -478,6 +478,7 @@ li {
 
 .image-selector input {
   width: 266px;
+  autocomplete="off";
 }
 
 
