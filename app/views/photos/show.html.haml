@@ -21,15 +21,14 @@
           = link_to 'DOWNVOTE', vote_down_photo_path(@photo), :method => :post, class: "form-button"
           %br
 
-    - if can? :edit, @photo
-      = link_to "Edit photo", edit_photo_path(@photo)
-      \|
-      = link_to "Remove photo", photo_path(@photo), method: :delete
-      \|
+    .photo-links
+      - if can? :edit, @photo
+        = link_to "Edit photo", edit_photo_path(@photo)
+        \|
+        = link_to "Remove photo", photo_path(@photo), method: :delete
+        \|
+        = link_to 'Share on Facebook', "https://www.facebook.com/sharer/sharer.php?u=http:\/photo-app-wdi-group-3.herokuapp.com" + photo_path(@photo)
 
-
-    = link_to 'Share on Facebook', "https://www.facebook.com/sharer/sharer.php?u=http:\/photo-app-wdi-group-3.herokuapp.com" + photo_path(@photo)
-    
     .comments-form-content
       - if can? :create, @comment
         %h3 Form to Add a Comment
