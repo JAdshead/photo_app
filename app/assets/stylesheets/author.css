@@ -178,6 +178,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 30%;
   height: 300px;
   margin: 1.6666665%;
+  padding-top: 1em;
   padding: 0;
   float: left;
 }
@@ -647,6 +648,10 @@ font-size: 1.05em;
 .background-page-avatar-picture img {
   border-radius: 100%;
   width: 20%;
+}
+
+.background-page-avatar-picture {
+  padding-top: 1em;
 }
 
 .score-link  {
