@@ -348,15 +348,15 @@ li.background {
 /*** album GRID ***/
 .album-form-grid {
   width: 80%;
-  margin-top: 70px;
   float: left;
 }
 
 .album-grid {
+  margin-top: 70px;
   width: 80%;
-  height: 99em;
+  min-height: 100%;
   float: left;
-  margin-bottom: 10em;
+  margin-bottom: 1em;
 }
 
 .album-photo {
@@ -371,6 +371,76 @@ li.background {
   height: 240px;
 }
 
+
+.album-form {
+    background-color: white;
+    margin: 2em auto;
+    text-align: center;
+    width: 50%;
+    border-radius: 3px;
+    -moz-box-shadow:    0px 1px 3px 0px rgba(0,0,0,0.08);
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.08);
+    box-shadow:         0px 1px 3px 0px rgba(0,0,0,0.08);
+}
+
+.album-form-button input {
+    width: 333px;
+    border: none;
+    border-radius: 3px;
+    margin: 10px 0 0 0;
+    padding: 1.3em 3em;
+    background-color: #67878A;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.125em;
+}
+.image-selector input {
+  width: 333px;
+  border-radius: 3px;
+  padding: 1em;
+  margin: 1em;
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  -moz-box-shadow: inset 0px 2px 0px 0px rgba(0,0,0,0.04);
+  -webkit-box-shadow: inset 0px 2px 0px 0px rgba(0,0,0,0.04);
+  box-shadow: inset 0px 2px 0px 0px rgba(0,0,0,0.04);
+  outline-width: 0;
+}
+
+.select2-choices {
+  border: none
+  box-shadow: none;
+}
+
+.select2-container ul {
+  border-radius: 5px;
+  padding: 0em;
+  margin: 0em;
+  background: none;
+  border: 0px solid #ffffff;
+  -moz-box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.0);
+  -webkit-box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.0);
+  box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.0);
+  outline-width: 0;
+}
+
+.select2-container{
+  width: 333px;
+  border-radius: 3px;
+  padding: 1em;
+  margin: 1em;
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  -moz-box-shadow: inset 0px 2px 0px 0px rgba(0,0,0,0.04);
+  -webkit-box-shadow: inset 0px 2px 0px 0px rgba(0,0,0,0.04);
+  box-shadow: inset 0px 2px 0px 0px rgba(0,0,0,0.04);
+  outline-width: 0;
+}
+
+.album-form-content {
+  padding: 1em 0; 
+  padding-bottom: 2em;
+}
 
 
 /*** SEARCHES ***/
@@ -390,6 +460,16 @@ font-size: 1.05em;
     color: #d5d8d8;
 }
 
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2em;
+  cursor: pointer;
+  color: #babebe;
+
+}
 
 .overlay {
   position: fixed;
@@ -465,14 +545,9 @@ font-size: 1.05em;
 
 /** no results search error **/
 
-.error_message_searches {
-  font-size: 3em;
-  text-align: center;
-  font-weight: 600;
-  color: #A0B3B8;
-}
 
 .error_message_searches  {
+  margin-top: 5em;
   font-size: 3em;
   text-align: center;
   font-weight: 600;
@@ -552,12 +627,15 @@ input {
     box-shadow:         0px 1px 3px 0px rgba(0,0,0,0.08);
 }
 
+.votes {
+  margin-bottom: 2em;
+  padding-top: 2em;
+}
 .form-button {
-
     border: none;
     border-radius: 3px;
     margin: 10px 0 0 0;
-    padding: 1.3em 8em;
+    padding: 1.3em 2em;
     background-color: #67878A;
     color: white;
     text-transform: uppercase;
