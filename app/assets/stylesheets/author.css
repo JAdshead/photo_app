@@ -454,6 +454,16 @@ font-size: 1.05em;
 }
 
 
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2em;
+  cursor: pointer;
+  color: #babebe;
+
+}
+
 .overlay {
   position: fixed;
   top: 0; bottom: 0;
@@ -528,14 +538,9 @@ font-size: 1.05em;
 
 /** no results search error **/
 
-.error_message_searches {
-  font-size: 3em;
-  text-align: center;
-  font-weight: 600;
-  color: #A0B3B8;
-}
 
 .error_message_searches  {
+  margin-top: 5em;
   font-size: 3em;
   text-align: center;
   font-weight: 600;
