@@ -405,8 +405,12 @@ li {
   float: left;
 }
 
+.album-photo a img {
+  width: 100.1%
+}
+
 .album-photo:hover img {
-  width: 100.1%;
+  width: 100.1%
 }
 
 .album-photo img {
