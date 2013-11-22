@@ -30,7 +30,7 @@ load_and_authorize_resource
   def update
     @photo = Photo.find params[:id]
     if @photo.update_attributes params[:photo]
-       updated_message = "Photo updated succesfully!"
+      updated_message = "Photo updated succesfully!"
       redirect_to @photo, notice: updated_message
     else
       render action: "edit"
