@@ -1,16 +1,16 @@
 
 .grid-content-area
   - @user.albums.each do |album|
-    .profile-grid-photo
+    .profile-grid-photo.animated.fadeInDown
       - if album.photos.empty?
-        = link_to album do 
+        = link_to album do
           = image_tag "/assets/new-album.png", class: "placeholder-album"
       - else
         - photo = album.photos.plusminus_tally.order('plusminus_tally DESC').first
         = link_to album do
           = image_tag photo.image_url(:profile_grid)
   - if can? :manage, @user
-    .profile-grid-photo.add
+    .profile-grid-photo.add.animated.fadeInDown
       %p.add-album-plus +
       = form_for Album.new, html: { enctype: "multipart/form-data" } do |f|
         = f.text_field :title, placeholder: "Album Title"
@@ -21,15 +21,16 @@
         .actions
           = f.submit 'Create Album', class: "form-button-album"
 
-.sidebar-content-area
+.sidebar-content-area.animated.slideInRight
   .sidebar-content
     .profile-picture
       =link_to image_tag(avatar_url(@user)), @user
       %h3= @user.name
-    - if can? :update, User
-      = link_to 'Edit Profile', edit_user_registration_path
     .sidebar-text
       %h1 Albums
       %span #{@user.albums.count}
       %h1 Photos
       %span #{@user.photos.count}
+    .profile-links.profile
+      - if can? :update, User
+        = link_to 'Edit Profile', edit_user_registration_path
