@@ -14,11 +14,11 @@
     <%= link_to image_tag("/assets/sign-in-with-google.png"), omniauth_authorize_path(resource_name, "google_oauth2") %><br />
     <%= link_to image_tag("/assets/facebook_login_buttons/pressed_200.png"), omniauth_authorize_path(resource_name, "facebook") %><br />
   <% end -%>
-
-  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-    <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
-  <% end -%>
-
+  <div class="confirm-and-forgot">
+    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+      <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+    <% end -%>
+  </div>
   <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
     <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
   <% end -%>

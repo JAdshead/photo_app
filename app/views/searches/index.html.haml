@@ -1,11 +1,12 @@
 
-.search-grid.header-margin
-  - @photos.each do |photo|
-    .search-photo
-      = link_to photo do
-        = image_tag(photo.image.search_grid)
-
-.error_message_searches
-  = @error_message
+- if !@error_message
+  .search-grid.header-margin
+    - @photos.each do |photo|
+      .search-photo
+        = link_to photo do
+          = image_tag(photo.image.search_grid)
+- else
+  .error_message_searches
+    = @error_message
 
 
