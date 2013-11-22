@@ -1,13 +1,15 @@
+include ActionDispatch::TestProcess
+
 FactoryGirl.define do
 
   factory :user do
     trait :with_albums do
       ignore do
-        album_count 3 # tells FG this is NOT an attribute
+        album_count 1 # tells FG this is NOT an attribute
       end
 
       after(:create) do |user, evaluator|
-        FactoryGirl.create_list :album, evaluator.album_count, user: user
+        FactoryGirl.create_list :album_with_photos_with_comments, evaluator.album_count, user: user
       end
     end
 
