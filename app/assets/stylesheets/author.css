@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .feature {
-  background-image: url(/assets/hero.png);
+  background-image: url(/assets/hero.jpg);
   height: 500px;
   background-size: cover;
   color: white;
@@ -739,7 +739,7 @@ p.add-album-plus {
   margin: 0;
   padding: 0;
   line-height: 240px;
-}
+} 
 
 .devise-shared-links a {
   color: #4C6469;
@@ -891,8 +891,12 @@ p.add-album-plus {
   color: white;
 }
 
+.add-album-plus:hover {
+  background-color: #647985;
+}
 
 
-
-
+.profile-links.profile {
+  margin-top: 2em;
+}
 

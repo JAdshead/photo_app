@@ -1,6 +1,6 @@
 .album-grid
   - @photos.each do |photo|
-    .album-photo
+    .album-photo.animated.fadeInDown
       = link_to image_tag(photo.image_url(:album_grid)), photo_path(photo)
 .album-form-grid
   - if can? :manage, @album
