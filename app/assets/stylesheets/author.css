@@ -36,7 +36,7 @@ a {
 }
 
 a:hover {
-  opacity: 0.9; 
+  opacity: 0.9;
 }
 
 body {
@@ -74,7 +74,7 @@ img:hover {
 }
 
 .nav-links {
-  
+
   float: right;
   padding-top: 20px;
   opacity: 1;
@@ -83,7 +83,7 @@ img:hover {
 
 .nav-links-home {
   float: right;
-  
+
   opacity: 1;
   margin-right: 50px;
   width: 100%;
@@ -229,7 +229,7 @@ li {
   margin-bottom: 10em;
   padding-top: 1em;
   margin-left: 5%;
-  
+
   text-align: center;
 }
 
@@ -274,9 +274,21 @@ li {
 .sidebar-text p {
   margin-top: 0;
   font-family: 'Raleway', sans-serif;
-  font-weight: 300; 
+  font-weight: 300;
   font-size: 0.9em;
   color: #647783;
+}
+
+.sidebar-links {
+  margin-top: 100px;
+}
+
+.sidebar-links a {
+  color: #799ba1;
+}
+
+.sidebar-links a:hover {
+  opacity: 0.6;
 }
 
 .profile-picture {
@@ -358,6 +370,14 @@ li {
   display: block;
   float: left;
   margin: 30px 0px 30px 30px;
+}
+
+.profile-links a {
+  color: #799ba1;
+}
+
+.profile-links a:hover {
+  opacity: 0.6;
 }
 
 /*** album GRID ***/
@@ -469,7 +489,7 @@ li {
 }
 
 .album-form-content {
-  padding: 1em 0; 
+  padding: 1em 0;
   padding-bottom: 2em;
 }
 
@@ -533,7 +553,7 @@ font-size: 1.05em;
 .overlay input:focus { outline: none; }
 
 .overlay .close {
-  cursor: pointer;  
+  cursor: pointer;
   position: absolute;
   font-weight: 500;
   font-size: 5em;
@@ -552,7 +572,7 @@ font-size: 1.05em;
 }
 .user-container a {
   text-decoration: none;
-  
+
 }
 
 /* photo show page*/
@@ -690,7 +710,7 @@ input {
 }
 
 .form-content {
-  padding: 1em 0; 
+  padding: 1em 0;
   padding-bottom: 2em;
 }
 
@@ -744,7 +764,7 @@ p.add-album-plus {
     width: 600px;
     height: 57px;
     margin: 30px 0 0 251px;
-    background-color: white;  
+    background-color: white;
 }
 
 .comment-form-button {
@@ -774,7 +794,6 @@ p.add-album-plus {
 /*** PHOTO PAGE ***/
 
 
-
 .grid-content-photo {
   text-align: center;
 }
@@ -788,21 +807,30 @@ p.add-album-plus {
   color: black;
   text-align: center;
   padding-top: 1em;
-  padding-bottom: -1em; 
+  padding-bottom: -1em;
 }
 
 #error_explanation h2 {
   display: none;
 }
+
 #error_explanation ul {
   list-style: none;
   padding-left: 0px;
 }
 
+.photo-links a {
+  color: #799ba1;
+}
+
+.photo-links a:hover {
+  opacity: 0.6;
+}
 
 /*comment forms*/
+
 .comments-form-content {
-  padding: 1em 0; 
+  padding: 1em 0;
   padding-bottom: 2em;
 }
 
@@ -816,8 +844,6 @@ p.add-album-plus {
     -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.08);
     box-shadow:         0px 1px 3px 0px rgba(0,0,0,0.08);
 }
-
-
 
 .comment p {
   text-align: left;
@@ -837,6 +863,14 @@ p.add-album-plus {
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.125em;
+}
+
+.comment-links a {
+  color: #799ba1;
+}
+
+.comment-links a:hover {
+  opacity: 0.6;
 }
 
 
