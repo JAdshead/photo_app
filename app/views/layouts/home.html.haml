@@ -37,6 +37,7 @@
       = alert
     .pagination
       .grid-container-home.cf
+        
         - @photos.each do |photo|
           .home-grid-photo{style: "background-image: url(#{photo.image_url(:home_grid)})"}
             .background-home-grid-photo
