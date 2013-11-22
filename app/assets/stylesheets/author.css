@@ -20,6 +20,9 @@
   color: red;
 }
 
+.form-button:hover {
+  opacity: 0.9;
+}
 
 /** FONT STUFF **/
 
@@ -30,6 +33,10 @@
 
 a {
   text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.9; 
 }
 
 body {
@@ -47,6 +54,10 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.175em;
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
+}
+
+img:hover {
+  opacity: 0.8;
 }
 
 
@@ -585,8 +596,6 @@ font-size: 1.05em;
 .background-page-avatar-picture img {
   border-radius: 100%;
   width: 20%;
-  float: left;
-  margin: 5em 0em 0 4em;
 }
 
 .score-link  {
