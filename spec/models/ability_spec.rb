@@ -35,13 +35,14 @@ require "cancan/matchers"
 
 describe "User" do
 
-  # before :each do
-  #   @user = FactoryGirl.create :user
-  #   @user.confirm!
-  #   sign_in @user
-  #   @photo = Photo.create!(title: "title", description: "description", image: fixture_file_upload('/images/placeholder.jpg', 'image/jpg'))
-  #   @album = Album.create!(title: "title", description: "description")
-  # end
+  before :each do
+  @user-1 = FactoryGirl.create :user_with_albums
+  @user.confirm!
+  @user-2 = FactoryGirl.create :user_with_albums
+  @user-2.confirm!
+  @user-3 = FactoryGirl.create :admin_with_albums
+  @user-3.confirm!
+  end
 
   # describe "admin" do
   #   subject(:ability){ Ability.new(:user) }
