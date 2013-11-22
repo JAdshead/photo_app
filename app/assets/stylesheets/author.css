@@ -204,6 +204,10 @@ li.background {
 
 }
 
+li {
+  list-style: none;
+}
+
 /*** GRID SECTION **/
 
 .grid-content-area {
@@ -395,7 +399,7 @@ li.background {
 }
 
 .album-form-button input {
-    width: 333px;
+    width: 266px;
     border: none;
     border-radius: 3px;
     margin: 10px 0 0 0;
@@ -404,6 +408,10 @@ li.background {
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.125em;
+}
+
+.album-form-button:hover input {
+  background-color: #73959a;
 }
 .image-selector input {
   width: 333px;
@@ -423,6 +431,14 @@ li.background {
   box-shadow: none;
 }
 
+.select2-container {
+  font-size: 1em;
+}
+
+.input-tags div ul {
+  border: none;
+}
+
 .select2-container ul {
   border-radius: 5px;
   padding: 0em;
@@ -435,8 +451,12 @@ li.background {
   outline-width: 0;
 }
 
+.select2-container {
+  padding: 0em
+}
+
 .select2-container{
-  width: 333px;
+  width: 266px;
   border-radius: 3px;
   padding: 1em;
   margin: 1em;
@@ -451,6 +471,10 @@ li.background {
 .album-form-content {
   padding: 1em 0; 
   padding-bottom: 2em;
+}
+
+.image-selector input {
+  width: 266px;
 }
 
 
