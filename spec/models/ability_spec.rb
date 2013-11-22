@@ -1,7 +1,6 @@
 require "spec_helper"
 require "cancan/matchers"
 
-
 # pseudo code:
 
 # factory girl create user-1, user-2, user-3
@@ -14,8 +13,8 @@ require "cancan/matchers"
 
 # user-1, user-2 and user-3 should be able to read all
 
-# user-1 should be able to create, update and destroy albums belonging to them
-# user-1 should be able to create, update and destroy photos within albums belonging to them
+# user-1 should be able to (create), update and destroy albums belonging to them - done
+# user-1 should be able to create, update and destroy photos within albums belonging to them - done
 # user-1 should not be to create, update or destroy albums belonging to user-2 (i.e. album-2)
 # user-1 should not be able to create, update or destroy photos within albums belonging to user-2 (i.e. photo-2)
 
@@ -35,19 +34,57 @@ require "cancan/matchers"
 
 describe "User" do
 
-  before :each do
-  @user-1 = FactoryGirl.create :user_with_albums
-  @user.confirm!
-  @user-2 = FactoryGirl.create :user_with_albums
-  @user-2.confirm!
-  @user-3 = FactoryGirl.create :admin_with_albums
-  @user-3.confirm!
+  before(:each) do
+    @user1 = FactoryGirl.create :user_with_albums
+    @user.confirm!
+    @user2 = FactoryGirl.create :user_with_albums
+    @user2.confirm!
+    @user3 = FactoryGirl.create :admin_with_albums
+    @user3.confirm!
+    @ability1 = Ability.new(@user1)
+    @ability2 = Ability.new(@user2)
+    @ability3 = Ability.new(@user3)
   end
 
-  # describe "admin" do
-  #   subject(:ability){ Ability.new(:user) }
-  #   # let(:user){ nil }
+  describe "user" do
 
+    # it " should be able to create albums belonging to it" do
+
+    # end
+
+    it " should be able to update albums belonging to it" do
+      @ability1.should be_able_to(:update, @user1.albums.first)
+    end
+
+    it " should be able to destroy albums belonging to it" do
+      @ability1.should be_able_to(:destroy, @user1.albums.first)
+    end
+
+    it " should not be able to update albums belonging to user-2" do
+      @ability1.should_not be_able_to(:update, @user2.albums.first)
+    end
+
+    it " should not be able to destroy albums belonging to user-2" do
+      @ability1.should_not be_able_to(:destroy, @user2.albums.first)
+    end
+
+    it " should be able to update photos within albums belonging to it" do
+      @ability1.should be_able_to(:update, @user1.albums.first.photos.first)
+    end
+
+    it " should be able to destroy photos within albums belonging to it" do
+      @ability1.should be_able_to(:update, @user1.albums.first.photos.first)
+    end
+
+    it " should not be able to update photos within albums belonging to user-2" do
+      @ability1.should be_able_to(:update, @user2.albums.first.photos.first)
+    end
+
+    it " should not be able to destroy photos within albums belonging to user-2" do
+      @ability1.should be_able_to(:update, @user2.albums.first.photos.first)
+    end
+
+# update and destroy
   #   # context "when is an user" do
   #   #   let(:user){ Factory(:user) }
   #   #   it{ should be_able_to(:manage, Album.new) }
@@ -58,9 +95,8 @@ describe "User" do
   #     let(:admin){ FactoryGirl.create(:admin) }
   #     # @user.role = "admin"
   #     it { should be_able_to(:manage, :all) }
-    end
-
   end
+
 end
 
 
