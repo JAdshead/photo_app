@@ -1,17 +1,18 @@
 .grid-content-area
-  %h3 Form to Edit a Photo
-  %ul.errors
-    - @photo.errors.full_messages.each do |error|
-      %li= error
-  = form_for(@photo) do |f|
-    = f.label :title
-    = f.text_field :title
-    = f.label :description
-    = f.text_field :description
-    .input-row
-      = f.label :tags
-      = f.text_field :tag_list, id: "photo_tags_list"
-    = f.submit
+  .album-form.album-form-content
+    .add-photo-form
+      %h3 Form to Edit a Photo
+      %ul.errors
+        - @photo.errors.full_messages.each do |error|
+          %li= error
+      = form_for(@photo) do |f|
+        = f.text_field :title, placeholder: "Title"
+        = f.text_field :description, placeholder: "Description"
+        .input-tags
+          = f.text_field :tag_list, id: "photo_tags_list", placeholder: "Tags"
+        .album-form-button
+          = f.submit
+          
 .sidebar-content-area
   .sidebar-content
     .profile-picture
