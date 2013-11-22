@@ -51,8 +51,9 @@
         .comment
           %p
             = comment.description
-        - if can? :destroy, comment
-          = link_to 'Delete Comment', comment, method: :delete
+          .comment-links
+            - if can? :destroy, comment
+              = link_to 'Delete Comment', comment, method: :delete
 .sidebar-content-area
   .sidebar-content
     .profile-picture

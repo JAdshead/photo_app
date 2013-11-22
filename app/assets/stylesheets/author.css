@@ -375,6 +375,14 @@ li {
   margin: 30px 0px 30px 30px;
 }
 
+.profile-links a {
+  color: #799ba1;
+}
+
+.profile-links a:hover {
+  opacity: 0.6;
+}
+
 /*** album GRID ***/
 .album-form-grid {
   width: 80%;
@@ -844,6 +852,14 @@ p.add-album-plus {
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.125em;
+}
+
+.comment-links a {
+  color: #799ba1;
+}
+
+.comment-links a:hover {
+  opacity: 0.6;
 }
 
 
