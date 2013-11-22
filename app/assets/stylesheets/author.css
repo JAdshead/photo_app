@@ -244,14 +244,21 @@ li.background {
 
 .sidebar-text h1 {
   margin-top: 2em;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .sidebar-text span {
   margin-top: 0;
   font-size: 3em;
   color: #94A9B1;
-  margin-left: 45%;
+}
+
+.sidebar-text p {
+  margin-top: 0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300; 
+  font-size: 0.9em;
+  color: #647783;
 }
 
 .profile-picture {
@@ -500,14 +507,11 @@ font-size: 1.05em;
   padding-top: 1em;
 }
 
-.background-page-avatar-picture {
-  margin: 0 auto;
-  padding-top: 1.5em;
-}
-
 .background-page-avatar-picture img {
   border-radius: 100%;
   width: 20%;
+  float: left;
+  margin: 5em 0em 0 4em;
 }
 
 .score-link  {
