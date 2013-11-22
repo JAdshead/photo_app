@@ -3,7 +3,7 @@
   - @user.albums.each do |album|
     .profile-grid-photo
       - if album.photos.empty?
-        = link_to album do 
+        = link_to album do
           = image_tag "/assets/new-album.png", class: "placeholder-album"
       - else
         - photo = album.photos.plusminus_tally.order('plusminus_tally DESC').first
@@ -26,8 +26,9 @@
     .profile-picture
       =link_to image_tag(avatar_url(@user)), @user
       %h3= @user.name
-    - if can? :update, @user
-      = link_to 'Edit Profile', edit_user_registration_path
+    .profile-links
+      - if can? :update, User
+        = link_to 'Edit Profile', edit_user_registration_path
     .sidebar-text
       %h1 Albums
       %span #{@user.albums.count}
