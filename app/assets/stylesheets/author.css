@@ -204,6 +204,10 @@ li.background {
 
 }
 
+li {
+  list-style: none;
+}
+
 /*** GRID SECTION **/
 
 .grid-content-area {
