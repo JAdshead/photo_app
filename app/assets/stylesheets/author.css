@@ -20,6 +20,9 @@
   color: red;
 }
 
+.form-button:hover {
+  opacity: 0.9;
+}
 
 /** FONT STUFF **/
 
@@ -30,6 +33,10 @@
 
 a {
   text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.9; 
 }
 
 body {
@@ -47,6 +54,10 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.175em;
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
+}
+
+img:hover {
+  opacity: 0.8;
 }
 
 
@@ -193,6 +204,10 @@ li.background {
 
 }
 
+li {
+  list-style: none;
+}
+
 /*** GRID SECTION **/
 
 .grid-content-area {
@@ -214,11 +229,14 @@ li.background {
   margin-bottom: 10em;
   padding-top: 1em;
   margin-left: 5%;
-  margin-right: 5%;
+  
+  text-align: center;
 }
 
 .single-photo{
   width: 800px;
+  text-align: center;
+  display: inline;
 }
 
 /*** SIDEBAR SECTION **/
@@ -244,14 +262,21 @@ li.background {
 
 .sidebar-text h1 {
   margin-top: 2em;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .sidebar-text span {
   margin-top: 0;
   font-size: 3em;
   color: #94A9B1;
-  margin-left: 45%;
+}
+
+.sidebar-text p {
+  margin-top: 0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300; 
+  font-size: 0.9em;
+  color: #647783;
 }
 
 .profile-picture {
@@ -323,10 +348,7 @@ li.background {
 } **/
 
 .profile-grid-photo .photo-upload {
-  float: left;
-  width: 6em;
-  margin-left: 7em;
-
+  width: 16.5em;
 }
 
 .profile-grid-form {
@@ -377,7 +399,7 @@ li.background {
 }
 
 .album-form-button input {
-    width: 333px;
+    width: 266px;
     border: none;
     border-radius: 3px;
     margin: 10px 0 0 0;
@@ -386,6 +408,10 @@ li.background {
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.125em;
+}
+
+.album-form-button:hover input {
+  background-color: #73959a;
 }
 .image-selector input {
   width: 333px;
@@ -405,6 +431,14 @@ li.background {
   box-shadow: none;
 }
 
+.select2-container {
+  font-size: 1em;
+}
+
+.input-tags div ul {
+  border: none;
+}
+
 .select2-container ul {
   border-radius: 5px;
   padding: 0em;
@@ -417,8 +451,12 @@ li.background {
   outline-width: 0;
 }
 
+.select2-container {
+  padding: 0em
+}
+
 .select2-container{
-  width: 333px;
+  width: 266px;
   border-radius: 3px;
   padding: 1em;
   margin: 1em;
@@ -433,6 +471,10 @@ li.background {
 .album-form-content {
   padding: 1em 0; 
   padding-bottom: 2em;
+}
+
+.image-selector input {
+  width: 266px;
 }
 
 
@@ -575,11 +617,6 @@ font-size: 1.05em;
   padding-top: 1em;
 }
 
-.background-page-avatar-picture {
-  margin: 0 auto;
-  padding-top: 1.5em;
-}
-
 .background-page-avatar-picture img {
   border-radius: 100%;
   width: 20%;
@@ -601,7 +638,8 @@ input {
     font-weight: 300;
     font-family: 'Raleway', sans-serif;
     margin: 1em;
-
+    outline: none;
+    
     background: #FFFFFF;
 
     border: 1px solid #DDDDDD;
@@ -636,6 +674,18 @@ input {
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.125em;
+}
+
+.form-button-album {
+  border: 1px solid white;
+  font-weight: 400;
+  text-transform: uppercase;
+  background-color: rgba(255,255,255, 0.05);
+  color: white;
+}
+
+.form-button-album:hover {
+  background-color: rgba(255,255,255, 0.15);
 }
 
 .form-content {
@@ -794,7 +844,10 @@ img:hover {
 }
 
 
-
+.new_album input:not([type="submit"]) {
+  background-color: rgba(255,255,255, 0.25); 
+  color: white;
+}
 
 
 

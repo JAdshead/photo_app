@@ -15,8 +15,11 @@ There are a number of ways to register as a user on the site: using your Google 
 Team Members
 -----------------------
 Jonny Adshead
+
 Jack Lalley
+
 Selina Chotai
+
 Daida Medina
 
 

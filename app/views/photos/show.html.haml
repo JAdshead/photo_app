@@ -1,11 +1,13 @@
 
-  
+
 .grid-content-area-photo
   .single-photo
     = link_to @photo.album do
       = image_tag @photo.image_url(:photo_resize)
 
   .comments-form
+    %br
+    .notice=notice
     .votes
       - if can? :vote_up, :vote_down, @photo
         %br
@@ -15,7 +17,7 @@
           %p You have voted for this photo
         - else current_user.voted_against?(@photo)
           = link_to 'UPVOTE', vote_up_photo_path(@photo), :method => :post, class: "form-button"
-          
+
           = link_to 'DOWNVOTE', vote_down_photo_path(@photo), :method => :post, class: "form-button"
           %br
 
@@ -27,7 +29,7 @@
 
 
     = link_to 'Share on Facebook', "https://www.facebook.com/sharer/sharer.php?u=http:\/photo-app-wdi-group-3.herokuapp.com" + photo_path(@photo)
-
+    
     .comments-form-content
       - if can? :create, @comment
         %h3 Form to Add a Comment

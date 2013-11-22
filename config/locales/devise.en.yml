@@ -50,6 +50,7 @@ en:
     users:
       user:
         signed_up_but_unconfirmed: "A confirmation email has been sent to your email account. Please follow the link."
+        updated: "Profile updated successfully."
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"

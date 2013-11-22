@@ -2,11 +2,11 @@
   - @photos.each do |photo|
     .album-photo
       = link_to image_tag(photo.image_url(:album_grid)), photo_path(photo)
-
 .album-form-grid
   - if can? :manage, @album
     .album-form.album-form-content
       %h3 Add photo
+      .notice=notice
       .add-photo-form
         %ul.errors
           - @photo.errors.full_messages.each do |error|
