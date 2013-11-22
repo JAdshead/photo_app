@@ -344,10 +344,7 @@ li.background {
 } **/
 
 .profile-grid-photo .photo-upload {
-  float: left;
-  width: 6em;
-  margin-left: 7em;
-
+  width: 16.5em;
 }
 
 .profile-grid-form {
@@ -617,7 +614,8 @@ input {
     font-weight: 300;
     font-family: 'Raleway', sans-serif;
     margin: 1em;
-
+    outline: none;
+    
     background: #FFFFFF;
 
     border: 1px solid #DDDDDD;
@@ -652,6 +650,18 @@ input {
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.125em;
+}
+
+.form-button-album {
+  border: 1px solid white;
+  font-weight: 400;
+  text-transform: uppercase;
+  background-color: rgba(255,255,255, 0.05);
+  color: white;
+}
+
+.form-button-album:hover {
+  background-color: rgba(255,255,255, 0.15);
 }
 
 .form-content {
@@ -810,7 +820,10 @@ img:hover {
 }
 
 
-
+.new_album input:not([type="submit"]) {
+  background-color: rgba(255,255,255, 0.25); 
+  color: white;
+}
 
 
 
