@@ -1,7 +1,7 @@
 .grid-content-area
   .album-form.album-form-content
     .add-photo-form
-      %h3 Form to Edit a Photo
+      %h3 Edit Photo
       %ul.errors
         - @photo.errors.full_messages.each do |error|
           %li= error
@@ -12,7 +12,7 @@
           = f.text_field :tag_list, id: "photo_tags_list", placeholder: "Tags"
         .album-form-button
           = f.submit
-          
+
 .sidebar-content-area
   .sidebar-content
     .profile-picture
