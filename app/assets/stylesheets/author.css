@@ -225,11 +225,14 @@ li.background {
   margin-bottom: 10em;
   padding-top: 1em;
   margin-left: 5%;
-  margin-right: 5%;
+  
+  text-align: center;
 }
 
 .single-photo{
   width: 800px;
+  text-align: center;
+  display: inline;
 }
 
 /*** SIDEBAR SECTION **/
